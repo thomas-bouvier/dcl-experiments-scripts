@@ -43,13 +43,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent icarl --model resnet --model-config "{'depth': 34}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent icarl --model resnet --model-config "{'depth': 34}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent icarl --model resnet --model-config "{'depth': 34}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent icarl --model resnet --model-config "{'depth': 34}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
@@ -69,13 +69,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent icarl --model resnet --model-config "{'depth': 101}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent icarl --model resnet --model-config "{'depth': 101}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent icarl --model resnet --model-config "{'depth': 101}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent icarl --model resnet --model-config "{'depth': 101}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
@@ -95,13 +95,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent icarl --model resnet --model-config "{'depth': 152}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent icarl --model resnet --model-config "{'depth': 152}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent icarl --model resnet --model-config "{'depth': 152}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent icarl --model resnet --model-config "{'depth': 152}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 
@@ -122,13 +122,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent nil --model resnet --model-config "{'depth': 34}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent nil --model resnet --model-config "{'depth': 34}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent nil --model resnet --model-config "{'depth': 34}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent nil --model resnet --model-config "{'depth': 34}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 
@@ -149,13 +149,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent nil --model resnet --model-config "{'depth': 101}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent nil --model resnet --model-config "{'depth': 101}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent nil --model resnet --model-config "{'depth': 101}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent nil --model resnet --model-config "{'depth': 101}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
@@ -175,13 +175,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent nil --model resnet --model-config "{'depth': 152}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent nil --model resnet --model-config "{'depth': 152}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent nil --model resnet --model-config "{'depth': 152}" --dataset cifar10 --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent nil --model resnet --model-config "{'depth': 152}" --dataset cifar10 --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
@@ -201,13 +201,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent icarl --model mnistnet --dataset mnist --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent icarl --model mnistnet --dataset mnist --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent icarl --model mnistnet --dataset mnist --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent icarl --model mnistnet --dataset mnist --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
@@ -227,13 +227,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent nil --model mnistnet --dataset mnist --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent nil --model mnistnet --dataset mnist --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent nil --model mnistnet --dataset mnist --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent nil --model mnistnet --dataset mnist --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
@@ -253,13 +253,13 @@ Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learni
 #### Default implementation
 
 ```
-python main.py --agent nil --model candlenet --dataset candle --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2}" --continual
+python main.py --agent nil --model candlenet --dataset candle --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3}"
 ```
 
 #### Scratch baseline
 
 ```
-python main.py --agent nil --model candlenet --dataset candle --dataset-config "{'scenario': 'class', 'initial_increment': 10, 'increment': 2, 'concatenate_tasksets': True}" --continual
+python main.py --agent nil --model candlenet --dataset candle --tasksets-config "{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}"
 ```
 
 |   | `chifflot` | `drac` | `drac-noib` |
