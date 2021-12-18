@@ -15,6 +15,18 @@ cd ipdps-experiments-e2clab
 ln -s ~/datasets/ datasets
 ```
 
+## Containers
+
+An image containing Horovod + PyTorch is required to deploy the application.
+
+If you have access to the Inria Gitlab, an image containing Horovod 0.23.0 + PyTorch 1.9 is available at `registry.gitlab.inria.fr/kerdata/kerdata-codes/ipdps-experiments-e2clab:0.23.0-gpu`. This container registry is protected by an access token, to be given in `layers_services.yml` files:
+
+```
+cd ipdps-experiments-e2clab
+find . \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
+
+```
+
 ## Deployments
 
 ### E2Clab
@@ -22,7 +34,11 @@ ln -s ~/datasets/ datasets
 The E2Clab docs can be found here https://e2clab.gitlabpages.inria.fr/e2clab/index.html.
 
 ```
-e2clab deploy /home/user/horovod-e2clab-examples/horovod-pytorch-mnist/chifflot/ --scenarios_name 1,2,4,8,12,16 /home/user/horovod-e2clab-examples/artifacts/
+cd e2clab
+virtualenv -p python3 venv
+source venv/bin/activate
+pip install -U -e .
+e2clab deploy ...
 ```
 
 ### Grafana
