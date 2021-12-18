@@ -1,10 +1,19 @@
-# ipdps-eperiments-e2clab
+# ipdps-experiments-e2clab
 
-## Applications
+## Datasets
 
-Applications to run are located in `artifacts/experiments`.
+On the g5k frontend, place the following datasets in `~/datasets`:
 
-Submodules should be updated using `git submodule foreach git pull`.
+- `~/datasets/CIFAR10`
+- `~/datasets/MNIST`
+- `~/datasets/CANDLE`
+
+Simlink the `datasets` folder from this `ipdps-experiments-e2clab` directory:
+
+```
+cd ipdps-experiments-e2clab
+ln -s ~/datasets/ datasets
+```
 
 ## Deployments
 
