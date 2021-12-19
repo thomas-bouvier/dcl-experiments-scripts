@@ -4,7 +4,7 @@
     - debug:
         msg: "Copying the Horovod job"
     - ansible.posix.synchronize:
-        src: "{{ working_dir }}/experiments/distributed-deep-learning"
+        src: "{{ working_dir }}/app/distributed-deep-learning"
         dest: "/root"
     - debug:
         msg: "Copying dataset"
