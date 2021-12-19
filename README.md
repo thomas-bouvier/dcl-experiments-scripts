@@ -1,18 +1,29 @@
 # ipdps-experiments-e2clab
 
-## Datasets
+## Application
 
-On the g5k frontend, place the following datasets in `~/datasets`:
+On the g5k frontend, place your application in `ipdps-experiments-e2clab/artifacts/app`
 
-- `~/datasets/CIFAR10`
-- `~/datasets/MNIST`
-- `~/datasets/CANDLE`
-
-Simlink the `datasets` folder from this `ipdps-experiments-e2clab` directory:
+Alternatively, you can simlimk the folder containing your app:
 
 ```
 cd ipdps-experiments-e2clab
-ln -s ~/datasets/ datasets
+ln -s ~/src/distributed-deep-learning/ artifacts/app/distributed-deep-learning
+```
+
+## Datasets
+
+On the g5k frontend, place the following datasets in `ipdps-experiments-e2clab/datasets`:
+
+- `ipdps-experiments-e2clab/artifacts/datasets/CIFAR10`
+- `ipdps-experiments-e2clab/artifacts/datasets/MNIST`
+- `ipdps-experiments-e2clab/artifacts/datasets/CANDLE`
+
+Simlink the `datasets` folder:
+
+```
+cd ipdps-experiments-e2clab
+ln -s ~/datasets/ artifacts/datasets
 ```
 
 ## Containers
