@@ -12,13 +12,13 @@
         src: "{{ working_dir }}/datasets/CIFAR10"
         dest: "/root/datasets"
   launch:
-    - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/examples/"
+    - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
     # https://manpages.ubuntu.com/manpages/artful/man1/docker-cp.1.html
-    - shell: "docker exec {{ _self.container_name }} mkdir /examples/data"
-    - shell: "docker cp /root/datasets/CIFAR10 {{ _self.container_name }}:/examples/data/"
+    - shell: "docker exec {{ _self.container_name }} mkdir /experiments/datasets"
+    - shell: "docker cp /root/datasets/CIFAR10 {{ _self.container_name }}:/experiments/datasets/"
     - debug:
         msg: "Installing Python dependencies"
-    - shell: "docker exec {{ _self.container_name }} pip install -r requirements.txt"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
 
 # Horovod master
 - hosts: cloud.horovod.1.1
@@ -29,14 +29,14 @@
   launch:
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec {{ _self.container_name }} horovodrun -np 8 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --model resnet --model-config \"{'depth': 18}\" --dataset cifar10 --tasksets-config \"{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}\" --epochs 200 --batch-size 128 --eval-batch-size 128 --lr 0.0001"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 8 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --model resnet --model-config \"{'depth': 18}\" --dataset cifar10 --tasksets-config \"{'scenario': 'class', 'initial_increment': 4, 'increment': 3, 'concatenate_tasksets': True}\" --epochs 200 --batch-size 128 --eval-batch-size 128 --lr 0.0001"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"
     - shell: "mkdir -p /root/experiments"
     - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/logs /root/experiments/."
     - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/timeline.json /root/experiments/."
-    - shell: "docker cp {{ _self.container_name }}:/examples/results /root/experiments/."
+    - shell: "docker cp {{ _self.container_name }}:/experiments/results /root/experiments/."
     - debug:
         msg: "Copying logs from host to experiment results"
     - find:
