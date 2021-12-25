@@ -1,0 +1,23 @@
+---
+environment:
+  name: g5k
+  cluster: chetemi
+  env_name: "debian10-x64-big"
+  job_name: horovod-pytorch-mnist-mnistnet-nil-chifflot
+  walltime: "01:00:00"
+monitoring:
+  type: tig
+  network: shared
+  agent_conf: "telegraf.conf.j2"
+layers:
+- name: cloud
+  services:
+  - name: Horovod
+    registry_url: "registry.gitlab.inria.fr"
+    registry_username: "tbouvier"
+    registry_password: ""
+    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-e2clab-examples:0.22.0-gpu"
+    gpu: True
+    quantity: 6
+    roles: [monitoring]
+    cluster: chifflot
