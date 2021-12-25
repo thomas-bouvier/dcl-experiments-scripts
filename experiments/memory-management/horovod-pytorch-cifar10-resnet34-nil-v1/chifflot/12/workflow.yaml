@@ -1,0 +1,73 @@
+# All Horovod nodes
+- hosts: cloud.horovod.*
+  prepare:
+    - debug:
+        msg: "Copying the Horovod job"
+    - ansible.posix.synchronize:
+        src: "{{ working_dir }}/app/distributed-deep-learning"
+        dest: "/root"
+    - debug:
+        msg: "Copying dataset"
+    - ansible.posix.synchronize:
+        src: "{{ working_dir }}/datasets/CIFAR10"
+        dest: "/root/datasets"
+  launch:
+    - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
+    # https://manpages.ubuntu.com/manpages/artful/man1/docker-cp.1.html
+    - shell: "docker exec {{ _self.container_name }} mkdir /experiments/datasets"
+    - shell: "docker cp /root/datasets/CIFAR10 {{ _self.container_name }}:/experiments/datasets/"
+    - debug:
+        msg: "Installing Python dependencies"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
+
+# Horovod master
+- hosts: cloud.horovod.1.1
+  depends_on:
+    - service_selector: "cloud.horovod.*"
+      grouping: "aggregate"
+      prefix: "horovod"
+  launch:
+    # https://horovod.readthedocs.io/en/stable/timeline_include.html
+    # https://github.com/horovod/horovod/issues/1373
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 12 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2,{{ horovod1_5.url }}:2,{{ horovod1_6.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --model resnet --model-config \"{'depth': 34}\" --agent nil --agent-config \"{'implementation': 'v1', 'num_representatives': 6000}\" --dataset cifar10 --tasksets-config \"{'scenario': 'class', 'initial_increment': 5, 'increment': 5}\" --epochs 5 --batch-size 128 --eval-batch-size 128 --lr 0.0001"
+  finalize:
+    - debug:
+        msg: "Copying logs from Docker to host"
+    - shell: "mkdir -p /root/experiments"
+    - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/logs /root/experiments/."
+    - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/timeline.json /root/experiments/."
+    - shell: "docker cp {{ _self.container_name }}:/experiments/results /root/experiments/."
+    - debug:
+        msg: "Copying logs from host to experiment results"
+    - find:
+        paths: "/root/experiments/logs/"
+        recurse: yes
+      register: logs_to_copy
+    - fetch:
+        src: "{{ item.path }}"
+        dest: "{{ working_dir }}/"
+        flat: no
+      with_items: "{{ logs_to_copy.files }}"
+    - debug:
+        msg: "Copying Horovod timeline from host to experiment results"
+    - fetch:
+        src: "/root/experiments/timeline.json"
+        dest: "{{ working_dir }}/"
+    - debug:
+        msg: "Copying results from host to experiment results"
+    - find:
+        paths: "/root/experiments/results/"
+        recurse: yes
+      register: results_to_copy
+    - fetch:
+        src: "{{ item.path }}"
+        dest: "{{ working_dir }}/"
+        flat: no
+      with_items: "{{ results_to_copy.files }}"
+
+# All Horovod nodes
+- hosts: cloud.horovod.*
+  finalize:
+    - debug:
+        msg: "Stopping Horovod node"
+    - shell: "docker stop {{ _self.container_name }} || true && docker rm {{ _self.container_name }} || true"
