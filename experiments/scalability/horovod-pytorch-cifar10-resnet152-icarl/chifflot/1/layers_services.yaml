@@ -16,7 +16,7 @@ layers:
     registry_url: "registry.gitlab.inria.fr"
     registry_username: "tbouvier"
     registry_password: ""
-    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-e2clab-examples:0.22.0-gpu"
+    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.23.0-gpu"
     gpu: True
     quantity: 6
     roles: [monitoring]
