@@ -1,44 +1,46 @@
-# ipdps-experiments-e2clab
+# dcl-experiments-e2clab
 
-## Application
+## Artifacts
 
-On the g5k frontend, place your application in `ipdps-experiments-e2clab/artifacts/app`
+### Application
+
+On the g5k frontend, place your application in `dcl-experiments-e2clab/artifacts/app`
 
 Alternatively, you can simlimk the folder containing your app:
 
 ```
-cd ipdps-experiments-e2clab
+cd dcl-experiments-e2clab
 ln -s ~/src/distributed-deep-learning/ artifacts/app/distributed-deep-learning
 ```
 
-## Datasets
+### Datasets
 
-On the g5k frontend, place the following datasets in `ipdps-experiments-e2clab/datasets`:
+On the g5k frontend, place the following datasets in `dcl-experiments-e2clab/datasets`:
 
-- `ipdps-experiments-e2clab/artifacts/datasets/CIFAR10`
-- `ipdps-experiments-e2clab/artifacts/datasets/MNIST`
-- `ipdps-experiments-e2clab/artifacts/datasets/CANDLE`
+- `dcl-experiments-e2clab/artifacts/datasets/CIFAR10`
+- `dcl-experiments-e2clab/artifacts/datasets/MNIST`
+- `dcl-experiments-e2clab/artifacts/datasets/CANDLE`
 
 Simlink the `datasets` folder:
 
 ```
-cd ipdps-experiments-e2clab
+cd dcl-experiments-e2clab
 ln -s ~/datasets/ artifacts/datasets
 ```
 
-## Containers
+## Deployment
+
+### Images
 
 An image containing Horovod + PyTorch is required to deploy the application.
 
-If you have access to the Inria Gitlab, an image containing Horovod 0.23.0 + PyTorch 1.9 is available at `registry.gitlab.inria.fr/kerdata/kerdata-codes/ipdps-experiments-e2clab:0.23.0-gpu`. This container registry is protected by an access token, to be given in `layers_services.yml` files:
+If you have access to the Inria Gitlab, an image containing Horovod 0.23.0 + PyTorch 1.9 is available at `registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.23.0-gpu`. This container registry is protected by an access token, to be given in `layers_services.yml` files:
 
 ```
-cd ipdps-experiments-e2clab
+cd dcl-experiments-e2clab
 find . \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
 
 ```
-
-## Deployments
 
 ### E2Clab
 
@@ -52,17 +54,42 @@ pip install -U -e .
 e2clab deploy ...
 ```
 
+## Monitoring
+
 ### Grafana
 
-To monitor what's happening on the cluster in real-time:
+To monitor system metrics (including GPU metrics) in real-time:
 
 ```
-ssh -NL 3000:chetemi-9.lille.grid5000.fr:3000 access.grid5000.fr
+ssh -NL 3000:127.0.0.1:3000 chetemi-9.lille.grid5000.fr
 ```
 
 Open `localhost:3000` in your browser.
 
 Some useful Grafana dashboards are hosted at https://gitlab.inria.fr/Kerdata/Kerdata-Codes/grafana-gpu-dashboard.
+
+### TensorWatch
+
+To monitor deep learning training metrics in real-time, in a Jupyter notebook:
+
+```
+ssh -NL 41459:chifflot-2.lille.grid5000.fr:41459 access.grid5000.fr
+```
+
+Open a notebook and connect to TensorWatch:
+
+```python
+%matplotlib notebook
+import tensorwatch as tw
+client = tw.WatcherClient(port=0)
+
+# Plot training loss
+s0 = client.open_stream(name='train_loss')
+v0 = tw.Visualizer(stream=s0)
+v0.show()
+```
+
+TensorWatch is using PyZMQ to publish training data, default port is 41459.
 
 ## Experiments
 
