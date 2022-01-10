@@ -68,9 +68,18 @@ Open `localhost:3000` in your browser.
 
 Some useful Grafana dashboards are hosted at https://gitlab.inria.fr/Kerdata/Kerdata-Codes/grafana-gpu-dashboard.
 
+### TensorBoard
+
+To monitor deep learning training metrics in real-time in TensorBoard:
+
+```
+ssh -NL 6006:127.0.0.1:6006 chifflot-2.lille.grid5000.fr
+```
+
+Open `localhost:6006` in your browser.
 ### TensorWatch
 
-To monitor deep learning training metrics in real-time, in a Jupyter notebook:
+To monitor deep learning training metrics in real-time in a Jupyter notebook:
 
 ```
 ssh -NL 41459:chifflot-2.lille.grid5000.fr:41459 access.grid5000.fr
