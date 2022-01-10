@@ -1,15 +1,20 @@
 # All Horovod nodes
 - hosts: cloud.horovod.*
   prepare:
-    - debug:
-        msg: "Copying the Horovod job"
+        - debug:
+        msg: "Copying the application"
     - ansible.posix.synchronize:
-        src: "{{ working_dir }}/app/distributed-deep-learning"
+        src: "{{ artifacts_dir }}/app/distributed-deep-learning"
         dest: "/root"
+    - debug:
+        msg: "Copying the job config"
+    - ansible.posix.synchronize:
+        src: "{{ scenario_dir }}/config.yaml"
+        dest: "/root/distributed-deep-learning"
     - debug:
         msg: "Copying dataset"
     - ansible.posix.synchronize:
-        src: "{{ working_dir }}/datasets/CIFAR10"
+        src: "{{ artifacts_dir }}/datasets/CIFAR10"
         dest: "/root/datasets"
   launch:
     - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
@@ -29,7 +34,7 @@
   launch:
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --model resnet --model-config \"{'depth': 101}\" --agent nil --agent-config \"{'num_representatives': 6000}\" --dataset cifar10 --tasksets-config \"{'scenario': 'class', 'initial_increment': 5, 'increment': 5}\" --epochs 5 --batch-size 128 --lr 0.0001"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"

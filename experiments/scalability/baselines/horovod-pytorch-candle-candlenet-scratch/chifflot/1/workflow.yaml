@@ -2,14 +2,19 @@
 - hosts: cloud.horovod.*
   prepare:
     - debug:
-        msg: "Copying the Horovod job"
+        msg: "Copying the application"
     - ansible.posix.synchronize:
-        src: "{{ working_dir }}/app/distributed-deep-learning"
+        src: "{{ artifacts_dir }}/app/distributed-deep-learning"
         dest: "/root"
+    - debug:
+        msg: "Copying the job config"
+    - ansible.posix.synchronize:
+        src: "{{ scenario_dir }}/config.yaml"
+        dest: "/root/distributed-deep-learning"
     - debug:
         msg: "Copying dataset"
     - ansible.posix.synchronize:
-        src: "{{ working_dir }}/datasets/CANDLE"
+        src: "{{ artifacts_dir }}/datasets/CANDLE"
         dest: "/root/datasets"
   launch:
     - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
@@ -29,7 +34,7 @@
   launch:
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --model candlenet --agent-config \"{'reset_state_dict': True}\" --dataset candle --tasksets-config \"{'scenario': 'class', 'initial_increment': 5, 'increment': 5, 'concatenate_tasksets': True}\" --epochs 5 --batch-size 128 --lr 0.0001"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"

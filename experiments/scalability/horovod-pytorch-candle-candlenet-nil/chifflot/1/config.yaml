@@ -1,0 +1,27 @@
+base:
+  dataset: candle
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 5, 'increment': 5}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 112, 'num_candidates': 4}"
+  model: candlenet
+  model_config:
+  batch_size: 20
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 5
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:

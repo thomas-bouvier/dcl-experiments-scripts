@@ -1,0 +1,27 @@
+base:
+  dataset: cifar10
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 5, 'increment': 5}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'v2', 'num_representatives': 6000}"
+  model: resnet
+  model_config: "{'depth': 152}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 5
+  lr: 0.0001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
