@@ -1,7 +1,7 @@
 # All Horovod nodes
 - hosts: cloud.horovod.*
   prepare:
-        - debug:
+    - debug:
         msg: "Copying the application"
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/app/distributed-deep-learning"
