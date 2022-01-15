@@ -13,7 +13,7 @@ baseline_naive:
   epochs: 200
   lr: 0.0001
   momentum:
-  optimizer:
+  optimizer: RMSProp:
   no_cuda:
   seed:
   log_interval:
@@ -41,7 +41,7 @@ baseline_scratch:
   epochs: 200
   lr: 0.0001
   momentum:
-  optimizer:
+  optimizer: RMSProp:
   no_cuda:
   seed:
   log_interval:
@@ -69,7 +69,7 @@ baseline_transfer:
   epochs: 200
   lr: 0.0001
   momentum:
-  optimizer:
+  optimizer: RMSProp:
   no_cuda:
   seed:
   log_interval:
@@ -97,7 +97,7 @@ nil_r12:
   epochs: 200
   lr: 0.0001
   momentum:
-  optimizer:
+  optimizer: RMSProp:
   no_cuda:
   seed:
   log_interval:
@@ -125,7 +125,7 @@ nil_r600:
   epochs: 200
   lr: 0.0001
   momentum:
-  optimizer:
+  optimizer: RMSProp:
   no_cuda:
   seed:
   log_interval:
