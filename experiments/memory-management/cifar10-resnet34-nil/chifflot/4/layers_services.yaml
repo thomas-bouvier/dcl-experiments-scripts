@@ -18,6 +18,5 @@ layers:
     registry_password: ""
     image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.23.0-gpu"
     gpu: True
-    quantity: 6
     roles: [monitoring]
-    cluster: chifflot
+    servers: ["chifflot-1.lille.grid5000.fr", "chifflot-2.lille.grid5000.fr", "chifflot-3.lille.grid5000.fr", "chifflot-4.lille.grid5000.fr", "chifflot-5.lille.grid5000.fr", "chifflot-6.lille.grid5000.fr"]
