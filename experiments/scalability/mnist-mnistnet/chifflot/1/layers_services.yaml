@@ -3,7 +3,7 @@ environment:
   name: g5k
   cluster: chetemi
   env_name: "debian10-x64-big"
-  job_name: horovod-pytorch-mnist-mnistnet-icarl-chifflot
+  job_name: horovod-pytorch-dcl-experiments-e2clab
   walltime: "01:00:00"
 monitoring:
   type: tig
