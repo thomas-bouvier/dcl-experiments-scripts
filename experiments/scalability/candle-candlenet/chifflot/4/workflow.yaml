@@ -44,7 +44,6 @@
     - shell: "mkdir -p /root/experiments"
     - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/logs /root/experiments/."
     - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/timeline.json /root/experiments/."
-    - shell: "docker cp {{ _self.container_name }}:/experiments/args.json /root/experiments/."
     - shell: "docker cp {{ _self.container_name }}:/experiments/profile.nsys-rep /root/experiments/."
     - shell: "docker cp {{ _self.container_name }}:/experiments/results /root/experiments/."
     - debug:
@@ -62,11 +61,6 @@
         msg: "Copying Horovod timeline from host to experiment results"
     - fetch:
         src: "/root/experiments/timeline.json"
-        dest: "{{ working_dir }}/"
-    - debug:
-        msg: "Copying args.json experiment results"
-    - fetch:
-        src: "/root/experiments/args.json"
         dest: "{{ working_dir }}/"
     - debug:
         msg: "Copying nsys profile from host to experiment results"
