@@ -19,7 +19,7 @@
   launch:
     - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
     # https://manpages.ubuntu.com/manpages/artful/man1/docker-cp.1.html
-    - shell: "docker exec {{ _self.container_name }} mkdir /experiments/datasets"
+    - shell: "docker exec {{ _self.container_name }} mkdir -p /experiments/datasets"
     - shell: "docker cp /root/datasets/MNIST {{ _self.container_name }}:/experiments/datasets/"
     - debug:
         msg: "Installing Python dependencies"
