@@ -21,3 +21,4 @@ layers:
     gpu: True
     roles: [monitoring]
     cluster: gemini
+    quantity: 1
