@@ -24,7 +24,9 @@
         dest: /tmp/datasets/ImageNet_blurred/
         creates: "/tmp/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
         remote_src: yes
-    - shell: "mv /tmp/datasets/ImageNet_blurred/train_blurred /tmp/datasets/ImageNet_blurred/train"
+    - shell:
+        cmd: "mv /tmp/datasets/ImageNet_blurred/train_blurred /tmp/datasets/ImageNet_blurred/train"
+        creates: "/tmp/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/val_blurred.tar.gz"
         dest: "/tmp/datasets/ImageNet_blurred/"
@@ -33,7 +35,9 @@
         dest: /tmp/datasets/ImageNet_blurred/
         creates: "/tmp/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
         remote_src: yes
-    - shell: "mv /tmp/datasets/ImageNet_blurred/val_blurred /tmp/datasets/ImageNet_blurred/val"
+    - shell:
+        cmd: "mv /tmp/datasets/ImageNet_blurred/val_blurred /tmp/datasets/ImageNet_blurred/val"
+        creates: "/tmp/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
   launch:
     - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
     - debug:
@@ -52,7 +56,7 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 8 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
     #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 8 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
   finalize:
     - debug:
