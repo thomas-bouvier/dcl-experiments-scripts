@@ -13,33 +13,14 @@
         dest: "/root/distributed-deep-learning"
     - debug:
         msg: "Copying dataset"
-    - file:
-        path: /tmp/datasets/ImageNet_blurred
-        state: directory
     - ansible.posix.synchronize:
-        src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/train_blurred.tar.gz"
-        dest: "/tmp/datasets/ImageNet_blurred/"
-    - unarchive:
-        src: /tmp/datasets/ImageNet_blurred/train_blurred.tar.gz
-        dest: /tmp/datasets/ImageNet_blurred/
-        creates: "/tmp/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
-        remote_src: yes
-    - shell:
-        cmd: "mv /tmp/datasets/ImageNet_blurred/train_blurred /tmp/datasets/ImageNet_blurred/train"
-        creates: "/tmp/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
-    - ansible.posix.synchronize:
-        src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/val_blurred.tar.gz"
-        dest: "/tmp/datasets/ImageNet_blurred/"
-    - unarchive:
-        src: /tmp/datasets/ImageNet_blurred/val_blurred.tar.gz
-        dest: /tmp/datasets/ImageNet_blurred/
-        creates: "/tmp/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
-        remote_src: yes
-    - shell:
-        cmd: "mv /tmp/datasets/ImageNet_blurred/val_blurred /tmp/datasets/ImageNet_blurred/val"
-        creates: "/tmp/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
+        src: "{{ artifacts_dir }}/datasets/CIFAR10"
+        dest: "/root/datasets"
   launch:
     - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
+    # https://manpages.ubuntu.com/manpages/artful/man1/docker-cp.1.html
+    - shell: "docker exec {{ _self.container_name }} mkdir -p /experiments/datasets"
+    - shell: "docker cp /root/datasets/CIFAR10 {{ _self.container_name }}:/experiments/datasets/"
     - debug:
         msg: "Installing Python dependencies"
     - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
