@@ -1,0 +1,107 @@
+# All Horovod nodes
+- hosts: cloud.horovod.*
+  prepare:
+    - debug:
+        msg: "Copying the application"
+    - ansible.posix.synchronize:
+        src: "{{ artifacts_dir }}/app/distributed-deep-learning"
+        dest: "/root"
+    - debug:
+        msg: "Copying the job config"
+    - ansible.posix.synchronize:
+        src: "{{ scenario_dir }}/config.yaml"
+        dest: "/root/distributed-deep-learning"
+    - debug:
+        msg: "Copying dataset"
+    - file:
+        path: /tmp/datasets/ImageNet_blurred
+        state: directory
+    - ansible.posix.synchronize:
+        src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/train_blurred.tar.gz"
+        dest: "/tmp/datasets/ImageNet_blurred/"
+    - unarchive:
+        src: /tmp/datasets/ImageNet_blurred/train_blurred.tar.gz
+        dest: /tmp/datasets/ImageNet_blurred/
+        creates: "/tmp/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
+        remote_src: yes
+    - shell:
+        cmd: "mv /tmp/datasets/ImageNet_blurred/train_blurred /tmp/datasets/ImageNet_blurred/train"
+        creates: "/tmp/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
+    - ansible.posix.synchronize:
+        src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/val_blurred.tar.gz"
+        dest: "/tmp/datasets/ImageNet_blurred/"
+    - unarchive:
+        src: /tmp/datasets/ImageNet_blurred/val_blurred.tar.gz
+        dest: /tmp/datasets/ImageNet_blurred/
+        creates: "/tmp/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
+        remote_src: yes
+    - shell:
+        cmd: "mv /tmp/datasets/ImageNet_blurred/val_blurred /tmp/datasets/ImageNet_blurred/val"
+        creates: "/tmp/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
+  launch:
+    - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
+    - debug:
+        msg: "Installing Python dependencies"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
+
+# Horovod master
+- hosts: cloud.horovod.1.1
+  depends_on:
+    - service_selector: "cloud.horovod.*"
+      grouping: "aggregate"
+      prefix: "horovod"
+  launch:
+    - shell: "docker exec -w /experiments -d {{ _self.container_name }} tensorboard --logdir results"
+    - debug:
+        msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
+    # https://horovod.readthedocs.io/en/stable/timeline_include.html
+    # https://github.com/horovod/horovod/issues/1373
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 16 -H {{ horovod1_1.url }}:8,{{ horovod1_2.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+    #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 16 -H {{ horovod1_1.url }}:8,{{ horovod1_2.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+  finalize:
+    - debug:
+        msg: "Copying logs from Docker to host"
+    - shell: "mkdir -p /root/experiments"
+    - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/logs /root/experiments/."
+    - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/timeline.json /root/experiments/."
+    #- shell: "docker cp {{ _self.container_name }}:/experiments/profile.nsys-rep /root/experiments/."
+    - shell: "docker cp {{ _self.container_name }}:/experiments/results /root/experiments/."
+    - debug:
+        msg: "Copying logs from host to experiment results"
+    - find:
+        paths: "/root/experiments/logs/"
+        recurse: yes
+      register: logs_to_copy
+    - fetch:
+        src: "{{ item.path }}"
+        dest: "{{ working_dir }}/"
+        flat: no
+      with_items: "{{ logs_to_copy.files }}"
+    - debug:
+        msg: "Copying Horovod timeline from host to experiment results"
+    - fetch:
+        src: "/root/experiments/timeline.json"
+        dest: "{{ working_dir }}/"
+    #- debug:
+    #    msg: "Copying nsys profile from host to #experiment results"
+    #- fetch:
+    #    src: "/root/experiments/profile.nsys-rep"
+    #    dest: "{{ working_dir }}/"
+    - debug:
+        msg: "Copying results from host to experiment results"
+    - find:
+        paths: "/root/experiments/results/"
+        recurse: yes
+      register: results_to_copy
+    - fetch:
+        src: "{{ item.path }}"
+        dest: "{{ working_dir }}/"
+        flat: no
+      with_items: "{{ results_to_copy.files }}"
+
+# All Horovod nodes
+- hosts: cloud.horovod.*
+  finalize:
+    - debug:
+        msg: "Stopping Horovod node"
+    - shell: "docker stop {{ _self.container_name }} || true && docker rm {{ _self.container_name }} || true"
