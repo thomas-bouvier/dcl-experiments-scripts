@@ -1,7 +1,7 @@
 baseline_naive:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent:
   agent_config:
@@ -10,7 +10,7 @@ baseline_naive:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -29,7 +29,7 @@ baseline_naive:
 baseline_scratch:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
@@ -38,7 +38,7 @@ baseline_scratch:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -57,7 +57,7 @@ baseline_scratch:
 baseline_transfer:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config:
@@ -66,7 +66,7 @@ baseline_transfer:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -85,7 +85,7 @@ baseline_transfer:
 nil_r1:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 1}"
@@ -94,7 +94,7 @@ nil_r1:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -113,7 +113,7 @@ nil_r1:
 nil_r2:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 2}"
@@ -122,7 +122,7 @@ nil_r2:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -141,7 +141,7 @@ nil_r2:
 nil_r4:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 4}"
@@ -150,7 +150,7 @@ nil_r4:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -169,7 +169,7 @@ nil_r4:
 nil_r6:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 6}"
@@ -178,7 +178,7 @@ nil_r6:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -197,7 +197,7 @@ nil_r6:
 nil_r12:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 12}"
@@ -206,7 +206,7 @@ nil_r12:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -225,7 +225,7 @@ nil_r12:
 nil_r60:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 60}"
@@ -234,7 +234,7 @@ nil_r60:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
@@ -253,7 +253,7 @@ nil_r60:
 nil_r600:
   dataset: tinyimagenet
   dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 50}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 600}"
@@ -262,7 +262,147 @@ nil_r600:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  epochs: 75
+  epochs: 100
+  lr: 0.0001
+  momentum:
+  optimizer: RMSProp
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_r6000:
+  dataset: tinyimagenet
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 6000}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 100
+  lr: 0.0001
+  momentum:
+  optimizer: RMSProp
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r6:
+  dataset: tinyimagenet
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 6}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 100
+  lr: 0.0001
+  momentum:
+  optimizer: RMSProp
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r60:
+  dataset: tinyimagenet
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 60}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 100
+  lr: 0.0001
+  momentum:
+  optimizer: RMSProp
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r600:
+  dataset: tinyimagenet
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 600}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 100
+  lr: 0.0001
+  momentum:
+  optimizer: RMSProp
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r6000:
+  dataset: tinyimagenet
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 50, 'increment': 50}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 6000}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  epochs: 100
   lr: 0.0001
   momentum:
   optimizer: RMSProp
