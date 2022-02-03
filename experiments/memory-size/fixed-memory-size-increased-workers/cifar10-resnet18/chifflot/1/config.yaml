@@ -11,9 +11,9 @@ baseline_naive:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 200
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -39,9 +39,9 @@ baseline_scratch:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 200
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -67,9 +67,9 @@ baseline_transfer:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 200
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -95,9 +95,9 @@ nil_r12:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 200
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -123,9 +123,9 @@ nil_r600:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 200
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:

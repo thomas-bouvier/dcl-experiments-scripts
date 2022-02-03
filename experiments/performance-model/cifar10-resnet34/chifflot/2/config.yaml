@@ -11,9 +11,9 @@ case1_icarl_c10:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -39,9 +39,9 @@ case1_icarl_c20:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -67,9 +67,9 @@ case1_icarl_c40:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -95,9 +95,9 @@ case2_icarl:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -123,9 +123,9 @@ case1_nil_c10:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -151,9 +151,9 @@ case1_nil_c20:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -179,9 +179,9 @@ case1_nil_c40:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
@@ -207,9 +207,9 @@ case2_nil:
   eval_batch_size:
   batches_per_allreduce:
   epochs: 5
-  lr: 0.0001
+  lr: 0.0125
   momentum:
-  optimizer: RMSProp
+  optimizer:
   no_cuda:
   seed:
   log_interval:
