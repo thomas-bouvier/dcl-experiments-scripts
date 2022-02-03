@@ -10,8 +10,10 @@ Alternatively, you can simlimk the folder containing your app:
 
 ```
 cd dcl-experiments-e2clab
-ln -s ~/src/distributed-deep-learning/ artifacts/app/distributed-deep-learning
+ln -s ~/src/distributed-continual-learning/ artifacts/app/distributed-deep-learning
 ```
+
+In this repository, we use [distributed-continual-learning](https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning).
 
 ### Datasets
 
