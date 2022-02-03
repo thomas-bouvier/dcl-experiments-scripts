@@ -10,6 +10,7 @@ base:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:

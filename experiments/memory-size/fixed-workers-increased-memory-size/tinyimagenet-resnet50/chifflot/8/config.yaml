@@ -10,6 +10,7 @@ baseline_naive:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -38,6 +39,7 @@ baseline_scratch:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -66,6 +68,7 @@ baseline_transfer:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -94,6 +97,7 @@ nil_r1:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -122,6 +126,7 @@ nil_r2:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -150,6 +155,7 @@ nil_r4:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -178,6 +184,7 @@ nil_r6:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -206,6 +213,7 @@ nil_r12:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -234,6 +242,7 @@ nil_r60:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -262,6 +271,7 @@ nil_r600:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -290,6 +300,7 @@ nil_r6000:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -318,6 +329,7 @@ icarl_r6:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -346,6 +358,7 @@ icarl_r60:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -374,6 +387,7 @@ icarl_r600:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:
@@ -402,6 +416,7 @@ icarl_r6000:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 100
   lr: 0.0125
   momentum:

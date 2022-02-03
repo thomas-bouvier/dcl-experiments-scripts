@@ -10,6 +10,7 @@ case1_icarl_c10:
   batch_size: 118
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -38,6 +39,7 @@ case1_icarl_c20:
   batch_size: 108
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -66,6 +68,7 @@ case1_icarl_c40:
   batch_size: 88
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -94,6 +97,7 @@ case2_icarl:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -122,6 +126,7 @@ case1_nil_c10:
   batch_size: 118
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -150,6 +155,7 @@ case1_nil_c20:
   batch_size: 108
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -178,6 +184,7 @@ case1_nil_c40:
   batch_size: 88
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
@@ -206,6 +213,7 @@ case2_nil:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
+  dataloader_workers:
   epochs: 5
   lr: 0.0125
   momentum:
