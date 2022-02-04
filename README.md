@@ -40,7 +40,7 @@ If you have access to the Inria Gitlab, an image containing Horovod 0.23.0 + PyT
 
 ```
 cd dcl-experiments-e2clab
-find . \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
+find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
 
 ```
 
