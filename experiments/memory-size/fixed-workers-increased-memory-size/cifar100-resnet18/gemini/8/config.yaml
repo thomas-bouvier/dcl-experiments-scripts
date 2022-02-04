@@ -11,7 +11,7 @@ baseline_naive:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -40,7 +40,7 @@ baseline_scratch:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -69,7 +69,7 @@ baseline_transfer:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -98,7 +98,7 @@ nil_r32:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -127,7 +127,7 @@ nil_r64:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -156,7 +156,7 @@ nil_r128:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -185,7 +185,7 @@ nil_r256:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -214,7 +214,7 @@ nil_r512:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -243,7 +243,7 @@ icarl_r32:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -272,7 +272,7 @@ icarl_r64:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -301,7 +301,7 @@ icarl_r128:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -330,7 +330,7 @@ icarl_r256:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:
@@ -359,7 +359,7 @@ icarl_r512:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 10
   lr: 0.0125
   momentum:
   optimizer:

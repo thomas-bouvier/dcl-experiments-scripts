@@ -11,7 +11,7 @@ baseline_naive:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -40,7 +40,7 @@ baseline_scratch:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -69,7 +69,7 @@ baseline_transfer:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -98,7 +98,7 @@ nil_r1:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -127,7 +127,7 @@ nil_r2:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -156,7 +156,7 @@ nil_r4:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -185,7 +185,7 @@ nil_r6:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -214,7 +214,7 @@ nil_r12:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -243,7 +243,7 @@ nil_r60:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
@@ -272,7 +272,7 @@ nil_r600:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 75
+  epochs: 20
   lr: 0.0125
   momentum:
   optimizer:
