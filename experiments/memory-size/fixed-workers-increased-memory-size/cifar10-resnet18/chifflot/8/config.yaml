@@ -7,7 +7,7 @@ baseline_naive:
   agent_config:
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -36,7 +36,7 @@ baseline_scratch:
   agent_config: "{'reset_state_dict': True}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -65,7 +65,7 @@ baseline_transfer:
   agent_config:
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -94,7 +94,7 @@ nil_r1:
   agent_config: "{'num_representatives': 1}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -123,7 +123,7 @@ nil_r2:
   agent_config: "{'num_representatives': 2}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -152,7 +152,7 @@ nil_r4:
   agent_config: "{'num_representatives': 4}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -181,7 +181,7 @@ nil_r6:
   agent_config: "{'num_representatives': 6}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -210,7 +210,7 @@ nil_r12:
   agent_config: "{'num_representatives': 12}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -239,7 +239,7 @@ nil_r60:
   agent_config: "{'num_representatives': 60}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -268,7 +268,7 @@ nil_r600:
   agent_config: "{'num_representatives': 600}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -297,7 +297,7 @@ nil_r6000:
   agent_config: "{'num_representatives': 6000}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -326,7 +326,7 @@ icarl_r6:
   agent_config: "{'num_representatives': 6}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -355,7 +355,7 @@ icarl_r60:
   agent_config: "{'num_representatives': 60}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -384,7 +384,7 @@ icarl_r600:
   agent_config: "{'num_representatives': 600}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -413,7 +413,7 @@ icarl_r6000:
   agent_config: "{'num_representatives': 6000}"
   model: resnet
   model_config: "{'depth': 18}"
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
