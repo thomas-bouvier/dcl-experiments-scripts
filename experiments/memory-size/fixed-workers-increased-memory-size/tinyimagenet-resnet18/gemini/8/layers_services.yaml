@@ -4,7 +4,7 @@ environment:
   cluster: chetemi
   env_name: "debian10-x64-big"
   job_name: horovod-pytorch-dcl-experiments-e2clab
-  job_type: ["deploy", "exotic"]
+  job_type: ["exotic", "allow_classic_ssh"]
   walltime: "02:00:00"
 #monitoring:
 #  type: tig
@@ -17,7 +17,7 @@ layers:
     registry_url: "registry.gitlab.inria.fr"
     registry_username: "tbouvier"
     registry_password: ""
-    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.23.0-gpu"
+    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.23.0-046c071-gpu"
     gpu: True
     roles: [monitoring]
     cluster: gemini
