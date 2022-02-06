@@ -1,15 +1,15 @@
 ---
 environment:
   name: g5k
-  cluster: chetemi
+  cluster: taurus
   env_name: "debian10-x64-big"
   job_name: horovod-pytorch-dcl-experiments-e2clab
   job_type: ["exotic", "allow_classic_ssh"]
   walltime: "02:00:00"
-#monitoring:
-#  type: tig
-#  network: shared
-#  agent_conf: "telegraf.conf.j2"
+monitoring:
+  type: tig
+  network: shared
+  agent_conf: "telegraf.conf.j2"
 layers:
 - name: cloud
   services:
