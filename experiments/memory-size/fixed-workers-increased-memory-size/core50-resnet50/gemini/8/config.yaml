@@ -1,0 +1,376 @@
+baseline_naive:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent:
+  agent_config:
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+baseline_scratch:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 10, 'increment': 10, 'concatenate_tasksets': True}"
+  shard:
+  agent:
+  agent_config: "{'reset_state_dict': True}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+baseline_transfer:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 10, 'increment': 10, 'concatenate_tasksets': True}"
+  shard:
+  agent:
+  agent_config:
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_r32:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 32}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_r64:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 64}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_r128:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 128}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_r256:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 256}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_r512:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 512}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r32:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 32}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r64:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 64}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r128:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 128}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r256:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 256}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_r512:
+  dataset: core50
+  dataset_dir:
+  tasksets_config: "{'scenario': 'classes', 'initial_increment': 10, 'increment': 10}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 512}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 32
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers: 2
+  epochs: 40
+  lr: 0.001
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
