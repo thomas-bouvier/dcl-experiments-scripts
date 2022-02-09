@@ -17,17 +17,19 @@ In this repository, we use [distributed-continual-learning](https://gitlab.inria
 
 ### Datasets
 
-On the g5k frontend, place the following datasets in `dcl-experiments-e2clab/datasets`:
+Place the following datasets in `/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets` (adapt to your Group Storage):
 
-- `dcl-experiments-e2clab/artifacts/datasets/CIFAR10`
-- `dcl-experiments-e2clab/artifacts/datasets/MNIST`
-- `dcl-experiments-e2clab/artifacts/datasets/CANDLE`
+- `datasets/CIFAR10`
+- `datasets/MNIST`
+- `datasets/CANDLE`
+- `datasets/ImageNet100`
+- `datasets/ImageNet_blurred`
 
-Simlink the `datasets` folder:
+Simlink the Group Storage `datasets` folder to `artifacts/datasets`:
 
 ```
 cd dcl-experiments-e2clab
-ln -s ~/datasets/ artifacts/datasets
+ln -s /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets/ artifacts/datasets
 ```
 
 ## Deployment
