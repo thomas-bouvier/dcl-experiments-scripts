@@ -12,6 +12,11 @@
         src: "{{ scenario_dir }}/config.yaml"
         dest: "/root/distributed-deep-learning"
     - debug:
+        msg: "Copying the model checkpoint"
+    - ansible.posix.synchronize:
+        src: "{{ artifacts_dir }}/checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar"
+        dest: "/root/distributed-deep-learning"
+    - debug:
         msg: "Copying dataset"
     - file:
         path: /tmp/datasets/ImageNet100
@@ -53,6 +58,8 @@
         dest: /dev/shm/datasets/ImageNet100/
         remote_src: yes
         creates: /dev/shm/datasets/ImageNet100/train/n01443537/n01443537_10007.JPEG
+        group: root
+        owner: root
   launch:
     - shell: "docker exec {{ _self.container_name }} ldconfig"
     - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
@@ -72,7 +79,7 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     #- shell: "docker exec -w /experiments {{ _self.container_name }} mpirun --allow-run-as-root -np 8 -H {{ horovod1_1.url }}:8 -bind-to none -map-by slot -mca plm_rsh_args \"-p 12345\" -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x PATH -mca pml ob1 -mca btl ^openib python main.py --config {{ app_conf }} --save-dir . --tensorboard"
-    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --checkpoint checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar --save-dir . --tensorboard"
     #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
   finalize:
     - debug:
