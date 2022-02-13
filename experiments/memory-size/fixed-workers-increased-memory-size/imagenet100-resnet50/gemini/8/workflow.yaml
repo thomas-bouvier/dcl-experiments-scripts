@@ -50,9 +50,17 @@
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/datasets/ImageNet100/train_100.txt"
         dest: /dev/shm/datasets/ImageNet100/
+    - file:
+        path: /dev/shm/datasets/ImageNet100/train_100.txt
+        group: root
+        owner: root
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/datasets/ImageNet100/val_100.txt"
         dest: /dev/shm/datasets/ImageNet100/
+    - file:
+        path: /dev/shm/datasets/ImageNet100/val_100.txt
+        group: root
+        owner: root
     - unarchive:
         src: /tmp/datasets/ImageNet100/imagenet100.tar.gz
         dest: /dev/shm/datasets/ImageNet100/
