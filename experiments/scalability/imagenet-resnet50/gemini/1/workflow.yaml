@@ -56,8 +56,8 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
-    #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json --timeline-mark-cycles python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+    #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir . --tensorboard"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"
