@@ -4,7 +4,7 @@ environment:
   cluster: chetemi
   env_name: "debian10-x64-big"
   job_name: horovod-pytorch-dcl-experiments-e2clab
-  job_type: ["exotic", "allow_classic_ssh"]
+  job_type: ["exotic", "deploy"]
   walltime: "02:00:00"
 #monitoring:
 #  type: tig
