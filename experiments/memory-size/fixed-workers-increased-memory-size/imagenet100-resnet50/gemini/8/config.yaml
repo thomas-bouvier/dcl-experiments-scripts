@@ -10,7 +10,7 @@ baseline_naive:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -39,7 +39,7 @@ baseline_scratch:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -68,7 +68,7 @@ baseline_transfer:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -97,7 +97,7 @@ nil_r26:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -126,7 +126,7 @@ nil_v1_r26:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -155,7 +155,7 @@ nil_r65:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -184,7 +184,7 @@ nil_v1_r65:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -213,7 +213,7 @@ nil_r130:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -242,7 +242,7 @@ nil_v1_r130:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -271,7 +271,7 @@ nil_r260:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -300,7 +300,7 @@ nil_v1_r260:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -329,7 +329,7 @@ icarl_r26:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -358,7 +358,7 @@ icarl_r65:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -387,7 +387,7 @@ icarl_v1_r65:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -416,7 +416,7 @@ icarl_r130:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -445,7 +445,7 @@ icarl_v1_r130:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -474,7 +474,7 @@ icarl_r260:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
@@ -503,7 +503,7 @@ icarl_v1_r260:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 4
+  dataloader_workers:
   epochs: 50
   lr: 0.0125
   momentum:
