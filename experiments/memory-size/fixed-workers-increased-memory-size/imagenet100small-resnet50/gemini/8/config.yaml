@@ -230,6 +230,35 @@ nil_v4_r26:
   tensorwatch:
   tensorwatch_port:
 
+nil_global_r26:
+  dataset: imagenet100small
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 26}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
 nil_r65:
   dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
@@ -353,6 +382,35 @@ nil_v4_r65:
   shard:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 65}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_global_r65:
+  dataset: imagenet100small
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -520,6 +578,35 @@ nil_v4_r104:
   tensorwatch:
   tensorwatch_port:
 
+nil_global_r104:
+  dataset: imagenet100small
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 104}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
 nil_r130:
   dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
@@ -643,6 +730,35 @@ nil_v4_r130:
   shard:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 130}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_global_r130:
+  dataset: imagenet100small
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -810,6 +926,35 @@ nil_v4_r195:
   tensorwatch:
   tensorwatch_port:
 
+nil_global_r195:
+  dataset: imagenet100small
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 195}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
 nil_r260:
   dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
@@ -933,6 +1078,35 @@ nil_v4_r260:
   shard:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 260}"
+  model: resnet
+  model_config: "{'depth': 50}"
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce: True
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_global_r260:
+  dataset: imagenet100small
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
