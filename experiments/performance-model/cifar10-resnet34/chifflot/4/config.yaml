@@ -16,6 +16,7 @@ base:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:

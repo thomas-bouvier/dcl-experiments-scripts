@@ -15,6 +15,7 @@ baseline_scratch:
   momentum:
   optimizer: RMSProp
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -43,6 +44,7 @@ nil:
   momentum:
   optimizer: RMSProp
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -71,6 +73,7 @@ icarl:
   momentum:
   optimizer: RMSProp
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:

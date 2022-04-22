@@ -16,6 +16,7 @@ baseline_nil:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -45,6 +46,7 @@ nil_v1:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -74,6 +76,7 @@ nil_v2:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -103,6 +106,7 @@ nil_v4:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:

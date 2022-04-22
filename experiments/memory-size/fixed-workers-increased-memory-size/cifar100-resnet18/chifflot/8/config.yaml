@@ -16,6 +16,7 @@ baseline_naive:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -45,6 +46,7 @@ baseline_scratch:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -74,6 +76,7 @@ baseline_transfer:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -103,6 +106,7 @@ nil_r32:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -132,6 +136,7 @@ nil_list_r32:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -161,6 +166,7 @@ nil_global_r32:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -190,6 +196,7 @@ nil_r64:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -219,6 +226,7 @@ nil_list_r64:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -248,6 +256,7 @@ nil_global_r64:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -277,6 +286,7 @@ nil_r128:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -306,6 +316,7 @@ nil_list_r128:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -335,6 +346,7 @@ nil_global_r128:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -364,6 +376,7 @@ nil_r256:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -393,6 +406,7 @@ nil_list_r256:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -422,6 +436,7 @@ nil_global_r256:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -451,6 +466,7 @@ nil_r512:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -480,6 +496,7 @@ nil_list_r512:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -509,6 +526,7 @@ nil_global_r512:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -538,6 +556,7 @@ icarl_r32:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -567,6 +586,7 @@ icarl_r64:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -596,6 +616,7 @@ icarl_r128:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -625,6 +646,7 @@ icarl_r256:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -654,6 +676,7 @@ icarl_r512:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda: True
   seed:
   log_interval:
   fp16_allreduce:
