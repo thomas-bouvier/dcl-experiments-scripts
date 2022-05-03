@@ -118,13 +118,13 @@ nil_r26:
   tensorwatch:
   tensorwatch_port:
 
-nil_list_r26:
+nil_cpp_r26:
   dataset: imagenet100
   dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'list', 'num_representatives': 26}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 26}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -208,13 +208,13 @@ nil_r65:
   tensorwatch:
   tensorwatch_port:
 
-nil_list_r65:
+nil_cpp_r65:
   dataset: imagenet100
   dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'list', 'num_representatives': 65}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -298,13 +298,13 @@ nil_r104:
   tensorwatch:
   tensorwatch_port:
 
-nil_list_r104:
+nil_cpp_r104:
   dataset: imagenet100
   dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'list', 'num_representatives': 104}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 104}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -388,13 +388,13 @@ nil_r130:
   tensorwatch:
   tensorwatch_port:
 
-nil_list_r130:
+nil_cpp_r130:
   dataset: imagenet100
   dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'list', 'num_representatives': 130}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -478,13 +478,13 @@ nil_r195:
   tensorwatch:
   tensorwatch_port:
 
-nil_list_r195:
+nil_cpp_r195:
   dataset: imagenet100
   dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'list', 'num_representatives': 195}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 195}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
@@ -568,13 +568,13 @@ nil_r260:
   tensorwatch:
   tensorwatch_port:
 
-nil_list_r260:
+nil_cpp_r260:
   dataset: imagenet100
   dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'list', 'num_representatives': 260}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
   batch_size: 128
