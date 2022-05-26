@@ -41,14 +41,14 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir . --tensorboard"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir . --tensorboard"
     #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir . --tensorboard"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"
     - shell: "mkdir -p /root/experiments"
     - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/logs /root/experiments/."
-    - shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/timeline.json /root/experiments/."
+    #- shell: "docker cp {{ _self.container_name }}:/tmp/horovodrun/timeline.json /root/experiments/."
     #- shell: "docker cp {{ _self.container_name }}:/experiments/profile.nsys-rep /root/experiments/."
     - shell: "docker cp {{ _self.container_name }}:/experiments/results /root/experiments/."
     - debug:
@@ -62,11 +62,11 @@
         dest: "{{ working_dir }}/"
         flat: no
       with_items: "{{ logs_to_copy.files }}"
-    - debug:
-        msg: "Copying Horovod timeline from host to experiment results"
-    - fetch:
-        src: "/root/experiments/timeline.json"
-        dest: "{{ working_dir }}/"
+    #- debug:
+    #    msg: "Copying Horovod timeline from host to experiment results"
+    #- fetch:
+    #    src: "/root/experiments/timeline.json"
+    #    dest: "{{ working_dir }}/"
     #- debug:
     #    msg: "Copying nsys profile from host to #experiment results"
     #- fetch:
