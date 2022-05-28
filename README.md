@@ -43,7 +43,6 @@ If you have access to the Inria Gitlab, an image containing Horovod 0.24.1 + PyT
 ```
 cd dcl-experiments-e2clab
 find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
-
 ```
 
 ### E2Clab
@@ -59,6 +58,14 @@ e2clab deploy ...
 ```
 
 ## Monitoring
+
+### Weights & Biases
+
+```
+cd dcl-experiments-e2clab
+find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -print0 | xargs -0 sed -i 's/wandb_api_key: ""/wandb_api_key: "<token>"/g'
+
+```
 
 ### Grafana
 

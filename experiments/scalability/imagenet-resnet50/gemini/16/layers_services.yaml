@@ -6,10 +6,10 @@ environment:
   job_name: horovod-pytorch-dcl-experiments-e2clab
   job_type: ["exotic", "deploy"]
   walltime: "02:00:00"
-monitoring:
-  type: tig
-  network: shared
-  agent_conf: "telegraf.conf.j2"
+#monitoring:
+#  type: tig
+#  network: shared
+#  agent_conf: "telegraf.conf.j2"
 layers:
 - name: cloud
   services:
@@ -17,6 +17,7 @@ layers:
     registry_url: "registry.gitlab.inria.fr"
     registry_username: "tbouvier"
     registry_password: ""
+    wandb_api_key: ""
     image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.24.1-gpu"
     gpu: True
     roles: [monitoring]
