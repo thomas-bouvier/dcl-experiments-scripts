@@ -19,6 +19,7 @@ layers:
     registry_username: "tbouvier"
     registry_password: ""
     wandb_api_key: ""
+    wandb_mode: "run"
     image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.24.1-gpu"
     gpu: True
     roles: [monitoring]
