@@ -56,7 +56,7 @@
     - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
     - debug:
         msg: "Compiling C++ component"
-    - shell: "docker exec -w /experiments {{ _self.container_name }} make -C cpp_loader TORCH_ROOT=/usr/local/lib/python3.8/dist-packages/torch"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} make -C cpp_loader"
     - shell: "docker exec -w /experiments/agents {{ _self.container_name }} ln -sf ../cpp_loader/rehearsal rehearsal"
 
 # Horovod master
