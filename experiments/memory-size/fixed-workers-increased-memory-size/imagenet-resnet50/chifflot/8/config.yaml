@@ -1,3 +1,34 @@
+base:
+  dataset:
+  dataset_dir:
+  tasksets_config:
+  shard:
+  agent:
+  agent_config:
+  model:
+  model_config:
+  checkpoint:
+  batch_size:
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs:
+  lr:
+  momentum:
+  optimizer:
+  no_cuda:
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
 baseline_naive:
   dataset: imagenet_blurred
   dataset_dir:
