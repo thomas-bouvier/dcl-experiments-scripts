@@ -7,7 +7,7 @@ baseline_naive:
   agent_config:
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -37,7 +37,7 @@ baseline_scratch:
   agent_config: "{'reset_state_dict': True}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -67,7 +67,7 @@ baseline_transfer:
   agent_config:
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -97,7 +97,7 @@ nil_r26:
   agent_config: "{'num_representatives': 26}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -127,7 +127,7 @@ nil_cpp_r26:
   agent_config: "{'implementation': 'cpp', 'num_representatives': 26}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -157,7 +157,7 @@ nil_global_r26:
   agent_config: "{'implementation': 'global', 'num_representatives': 26}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -187,7 +187,7 @@ nil_r65:
   agent_config: "{'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -217,7 +217,7 @@ nil_cpp_r65:
   agent_config: "{'implementation': 'cpp', 'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -247,7 +247,7 @@ nil_global_r65:
   agent_config: "{'implementation': 'global', 'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -277,7 +277,7 @@ nil_r104:
   agent_config: "{'num_representatives': 104}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -307,7 +307,7 @@ nil_cpp_r104:
   agent_config: "{'implementation': 'cpp', 'num_representatives': 104}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -337,7 +337,7 @@ nil_global_r104:
   agent_config: "{'implementation': 'global', 'num_representatives': 104}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -367,7 +367,7 @@ nil_r130:
   agent_config: "{'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -397,7 +397,7 @@ nil_cpp_r130:
   agent_config: "{'implementation': 'cpp', 'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -427,7 +427,7 @@ nil_global_r130:
   agent_config: "{'implementation': 'global', 'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -457,7 +457,7 @@ nil_r195:
   agent_config: "{'num_representatives': 195}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -487,7 +487,7 @@ nil_cpp_r195:
   agent_config: "{'implementation': 'cpp', 'num_representatives': 195}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -517,7 +517,7 @@ nil_global_r195:
   agent_config: "{'implementation': 'global', 'num_representatives': 195}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -547,7 +547,7 @@ nil_r260:
   agent_config: "{'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -577,7 +577,7 @@ nil_cpp_r260:
   agent_config: "{'implementation': 'cpp', 'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -607,7 +607,7 @@ nil_global_r260:
   agent_config: "{'implementation': 'global', 'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -637,7 +637,7 @@ icarl_r26:
   agent_config: "{'num_representatives': 26}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -667,7 +667,7 @@ icarl_v1_r26:
   agent_config: "{'implementation': 'v1', 'num_representatives': 26}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -697,7 +697,7 @@ icarl_r65:
   agent_config: "{'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -727,7 +727,7 @@ icarl_v1_r65:
   agent_config: "{'implementation': 'v1', 'num_representatives': 65}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -757,7 +757,7 @@ icarl_r104:
   agent_config: "{'num_representatives': 104}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -787,7 +787,7 @@ icarl_v1_r104:
   agent_config: "{'implementation': 'v1', 'num_representatives': 104}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -817,7 +817,7 @@ icarl_r130:
   agent_config: "{'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -847,7 +847,7 @@ icarl_v1_r130:
   agent_config: "{'implementation': 'v1', 'num_representatives': 130}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -877,7 +877,7 @@ icarl_r195:
   agent_config: "{'num_representatives': 195}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -907,7 +907,7 @@ icarl_v1_r195:
   agent_config: "{'implementation': 'v1', 'num_representatives': 195}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -937,7 +937,7 @@ icarl_r260:
   agent_config: "{'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -967,7 +967,7 @@ icarl_v1_r260:
   agent_config: "{'implementation': 'v1', 'num_representatives': 260}"
   model: resnet
   model_config: "{'depth': 50}"
-  batch_size: 128
+  batch_size: 96
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:

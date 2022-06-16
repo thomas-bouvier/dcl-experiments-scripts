@@ -2,7 +2,7 @@
 environment:
   name: g5k
   cluster: taurus
-  env_name: "debian10-x64-big"
+  env_name: "debian11-x64-big"
   job_name: horovod-pytorch-dcl-experiments-e2clab
   job_type: ["exotic", "deploy"]
   queue: "testing"
