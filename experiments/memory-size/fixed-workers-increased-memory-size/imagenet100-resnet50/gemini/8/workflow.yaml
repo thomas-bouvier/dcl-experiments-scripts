@@ -112,11 +112,11 @@
         dest: "{{ working_dir }}/"
         flat: no
       with_items: "{{ logs_to_copy.files }}"
-    #- debug:
-    #    msg: "Copying Horovod timeline from host to experiment results"
-    #- fetch:
-    #    src: "/root/experiments/timeline.json"
-    #    dest: "{{ working_dir }}/"
+    - debug:
+        msg: "Copying Horovod timeline from host to experiment results"
+    - fetch:
+        src: "/root/experiments/timeline.json"
+        dest: "{{ working_dir }}/"
         fail_on_missing: no
     - debug:
         msg: "Copying nsys profile from host to experiment results"
