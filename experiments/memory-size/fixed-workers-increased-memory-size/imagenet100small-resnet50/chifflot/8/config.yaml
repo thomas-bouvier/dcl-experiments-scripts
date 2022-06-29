@@ -37,7 +37,7 @@ baseline_naive:
   agent:
   agent_config:
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -48,6 +48,8 @@ baseline_naive:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -67,7 +69,7 @@ baseline_scratch:
   agent:
   agent_config: "{'reset_state_dict': True}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -78,6 +80,8 @@ baseline_scratch:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -97,7 +101,7 @@ baseline_transfer:
   agent:
   agent_config:
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -108,6 +112,8 @@ baseline_transfer:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -127,7 +133,7 @@ nil_r26:
   agent: nil
   agent_config: "{'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -138,6 +144,8 @@ nil_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -157,7 +165,7 @@ nil_v1_r26:
   agent: nil
   agent_config: "{'implementation': 'v1', 'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -168,6 +176,8 @@ nil_v1_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -187,7 +197,7 @@ nil_v2_r26:
   agent: nil
   agent_config: "{'implementation': 'v2', 'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -198,6 +208,8 @@ nil_v2_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -217,7 +229,7 @@ nil_v3_r26:
   agent: nil
   agent_config: "{'implementation': 'v3', 'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -228,6 +240,8 @@ nil_v3_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -247,7 +261,7 @@ nil_v4_r26:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -258,6 +272,8 @@ nil_v4_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -277,7 +293,7 @@ nil_global_r26:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -288,6 +304,8 @@ nil_global_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -307,7 +325,7 @@ nil_r65:
   agent: nil
   agent_config: "{'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -318,6 +336,8 @@ nil_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -337,7 +357,7 @@ nil_v1_r65:
   agent: nil
   agent_config: "{'implementation': 'v1', 'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -348,6 +368,8 @@ nil_v1_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -367,7 +389,7 @@ nil_v2_r65:
   agent: nil
   agent_config: "{'implementation': 'v2', 'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -378,6 +400,8 @@ nil_v2_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -397,7 +421,7 @@ nil_v3_r65:
   agent: nil
   agent_config: "{'implementation': 'v3', 'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -408,6 +432,8 @@ nil_v3_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -427,7 +453,7 @@ nil_v4_r65:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -438,6 +464,8 @@ nil_v4_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -457,7 +485,7 @@ nil_global_r65:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -468,6 +496,8 @@ nil_global_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -487,7 +517,7 @@ nil_r104:
   agent: nil
   agent_config: "{'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -498,6 +528,8 @@ nil_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -517,7 +549,7 @@ nil_v1_r104:
   agent: nil
   agent_config: "{'implementation': 'v1', 'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -528,6 +560,8 @@ nil_v1_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -547,7 +581,7 @@ nil_v2_r104:
   agent: nil
   agent_config: "{'implementation': 'v2', 'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -558,6 +592,8 @@ nil_v2_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -577,7 +613,7 @@ nil_v3_r104:
   agent: nil
   agent_config: "{'implementation': 'v3', 'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -588,6 +624,8 @@ nil_v3_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -607,7 +645,7 @@ nil_v4_r104:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -618,6 +656,8 @@ nil_v4_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -637,7 +677,7 @@ nil_global_r104:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -648,6 +688,8 @@ nil_global_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -667,7 +709,7 @@ nil_r130:
   agent: nil
   agent_config: "{'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -678,6 +720,8 @@ nil_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -697,7 +741,7 @@ nil_v1_r130:
   agent: nil
   agent_config: "{'implementation': 'v1', 'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -708,6 +752,8 @@ nil_v1_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -727,7 +773,7 @@ nil_v2_r130:
   agent: nil
   agent_config: "{'implementation': 'v2', 'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -738,6 +784,8 @@ nil_v2_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -757,7 +805,7 @@ nil_v3_r130:
   agent: nil
   agent_config: "{'implementation': 'v3', 'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -768,6 +816,8 @@ nil_v3_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -787,7 +837,7 @@ nil_v4_r130:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -798,6 +848,8 @@ nil_v4_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -817,7 +869,7 @@ nil_global_r130:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -828,6 +880,8 @@ nil_global_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -847,7 +901,7 @@ nil_r195:
   agent: nil
   agent_config: "{'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -858,6 +912,8 @@ nil_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -877,7 +933,7 @@ nil_v1_r195:
   agent: nil
   agent_config: "{'implementation': 'v1', 'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -888,6 +944,8 @@ nil_v1_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -907,7 +965,7 @@ nil_v2_r195:
   agent: nil
   agent_config: "{'implementation': 'v2', 'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -918,6 +976,8 @@ nil_v2_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -937,7 +997,7 @@ nil_v3_r195:
   agent: nil
   agent_config: "{'implementation': 'v3', 'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -948,6 +1008,8 @@ nil_v3_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -967,7 +1029,7 @@ nil_v4_r195:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -978,6 +1040,8 @@ nil_v4_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -997,7 +1061,7 @@ nil_global_r195:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1008,6 +1072,8 @@ nil_global_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1027,7 +1093,7 @@ nil_r260:
   agent: nil
   agent_config: "{'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1038,6 +1104,8 @@ nil_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1057,7 +1125,7 @@ nil_v1_r260:
   agent: nil
   agent_config: "{'implementation': 'v1', 'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1068,6 +1136,8 @@ nil_v1_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1087,7 +1157,7 @@ nil_v2_r260:
   agent: nil
   agent_config: "{'implementation': 'v2', 'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1098,6 +1168,8 @@ nil_v2_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1117,7 +1189,7 @@ nil_v3_r260:
   agent: nil
   agent_config: "{'implementation': 'v3', 'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1128,6 +1200,8 @@ nil_v3_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1147,7 +1221,7 @@ nil_v4_r260:
   agent: nil
   agent_config: "{'implementation': 'v4', 'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1158,6 +1232,8 @@ nil_v4_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1177,7 +1253,7 @@ nil_global_r260:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1188,6 +1264,8 @@ nil_global_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1207,7 +1285,7 @@ icarl_r26:
   agent: icarl
   agent_config: "{'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1218,6 +1296,8 @@ icarl_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1237,7 +1317,7 @@ icarl_v1_r26:
   agent: icarl
   agent_config: "{'implementation': 'v1', 'num_representatives': 26}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1248,6 +1328,8 @@ icarl_v1_r26:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1267,7 +1349,7 @@ icarl_r65:
   agent: icarl
   agent_config: "{'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1278,6 +1360,8 @@ icarl_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1297,7 +1381,7 @@ icarl_v1_r65:
   agent: icarl
   agent_config: "{'implementation': 'v1', 'num_representatives': 65}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1308,6 +1392,8 @@ icarl_v1_r65:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1327,7 +1413,7 @@ icarl_r104:
   agent: icarl
   agent_config: "{'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1338,6 +1424,8 @@ icarl_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1357,7 +1445,7 @@ icarl_v1_r104:
   agent: icarl
   agent_config: "{'implementation': 'v1', 'num_representatives': 104}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1368,6 +1456,8 @@ icarl_v1_r104:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1387,7 +1477,7 @@ icarl_r130:
   agent: icarl
   agent_config: "{'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1398,6 +1488,8 @@ icarl_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1417,7 +1509,7 @@ icarl_v1_r130:
   agent: icarl
   agent_config: "{'implementation': 'v1', 'num_representatives': 130}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1428,6 +1520,8 @@ icarl_v1_r130:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1447,7 +1541,7 @@ icarl_r195:
   agent: icarl
   agent_config: "{'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1458,6 +1552,8 @@ icarl_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1477,7 +1573,7 @@ icarl_v1_r195:
   agent: icarl
   agent_config: "{'implementation': 'v1', 'num_representatives': 195}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1488,6 +1584,8 @@ icarl_v1_r195:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1507,7 +1605,7 @@ icarl_r260:
   agent: icarl
   agent_config: "{'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1518,6 +1616,8 @@ icarl_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -1537,7 +1637,7 @@ icarl_v1_r260:
   agent: icarl
   agent_config: "{'implementation': 'v1', 'num_representatives': 260}"
   model: resnet
-  model_config: "{'depth': 50}"
+  model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
@@ -1548,6 +1648,8 @@ icarl_v1_r260:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True

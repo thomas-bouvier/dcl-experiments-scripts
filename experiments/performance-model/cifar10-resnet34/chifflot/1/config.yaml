@@ -17,6 +17,8 @@ case1_icarl_c10:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -47,6 +49,8 @@ case1_icarl_c20:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -77,6 +81,8 @@ case1_icarl_c40:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -107,6 +113,8 @@ case2_icarl:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -137,6 +145,8 @@ case1_nil_c10:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -167,6 +177,8 @@ case1_nil_c20:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -197,6 +209,8 @@ case1_nil_c40:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -227,6 +241,8 @@ case2_nil:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:

@@ -17,6 +17,8 @@ baseline_nil:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -47,6 +49,8 @@ nil_v1:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -77,6 +81,8 @@ nil_v2:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -107,6 +113,8 @@ nil_v4:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:

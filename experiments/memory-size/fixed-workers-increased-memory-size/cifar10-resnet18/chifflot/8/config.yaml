@@ -48,6 +48,8 @@ baseline_naive:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -78,6 +80,8 @@ baseline_scratch:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -108,6 +112,8 @@ baseline_transfer:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -138,6 +144,8 @@ nil_r1:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -168,6 +176,8 @@ nil_r2:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -198,6 +208,8 @@ nil_r4:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -228,6 +240,8 @@ nil_r6:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -258,6 +272,8 @@ nil_r12:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -288,6 +304,8 @@ nil_r60:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -318,6 +336,8 @@ nil_r600:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -348,6 +368,8 @@ nil_r6000:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -378,6 +400,8 @@ icarl_r6:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -408,6 +432,8 @@ icarl_r60:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -438,6 +464,8 @@ icarl_r600:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -468,6 +496,8 @@ icarl_r6000:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:

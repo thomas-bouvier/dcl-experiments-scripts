@@ -1,19 +1,19 @@
 base:
-  dataset:
+  dataset: imagenet
   dataset_dir:
   tasksets_config:
   shard:
   agent:
   agent_config:
-  model:
+  model: resnet50
   model_config:
   checkpoint:
   batch_size:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs:
-  lr:
+  epochs: 50
+  lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
@@ -30,24 +30,26 @@ base:
   tensorwatch_port:
 
 baseline_naive:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent:
   agent_config:
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -60,24 +62,26 @@ baseline_naive:
   tensorwatch_port:
 
 baseline_scratch:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -90,24 +94,26 @@ baseline_scratch:
   tensorwatch_port:
 
 baseline_transfer:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config:
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -120,24 +126,26 @@ baseline_transfer:
   tensorwatch_port:
 
 nil_r32:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 32}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -150,24 +158,26 @@ nil_r32:
   tensorwatch_port:
 
 nil_r64:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 64}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -180,24 +190,26 @@ nil_r64:
   tensorwatch_port:
 
 nil_r128:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 128}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -210,24 +222,26 @@ nil_r128:
   tensorwatch_port:
 
 nil_r256:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 256}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -240,24 +254,26 @@ nil_r256:
   tensorwatch_port:
 
 nil_r512:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 512}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -270,24 +286,26 @@ nil_r512:
   tensorwatch_port:
 
 icarl_r32:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 32}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -300,24 +318,26 @@ icarl_r32:
   tensorwatch_port:
 
 icarl_r64:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 64}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -330,24 +350,26 @@ icarl_r64:
   tensorwatch_port:
 
 icarl_r128:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 128}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -360,24 +382,26 @@ icarl_r128:
   tensorwatch_port:
 
 icarl_r256:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 256}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
@@ -390,24 +414,26 @@ icarl_r256:
   tensorwatch_port:
 
 icarl_r512:
-  dataset: imagenet_blurred
+  dataset: imagenet
   dataset_dir:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 512}"
-  model: resnet
-  model_config: "{'depth': 50}"
+  model: resnet50
+  model_config:
   batch_size: 256
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
   buffer_cuda: True
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce: True
