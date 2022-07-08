@@ -22,7 +22,7 @@ base:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
@@ -55,12 +55,13 @@ baseline_naive:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -87,12 +88,13 @@ baseline_scratch:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -119,12 +121,13 @@ baseline_transfer:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -151,12 +154,13 @@ nil_r32:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -183,12 +187,13 @@ nil_r64:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -215,12 +220,13 @@ nil_r128:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -247,12 +253,13 @@ nil_r256:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -279,12 +286,13 @@ nil_r512:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -311,12 +319,13 @@ icarl_r32:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -343,12 +352,13 @@ icarl_r64:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -375,12 +385,13 @@ icarl_r128:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -407,12 +418,13 @@ icarl_r256:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -439,11 +451,12 @@ icarl_r512:
   use_amp: True
   seed:
   log_interval:
-  fp16_allreduce: True
+  fp16_allreduce:
   use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:

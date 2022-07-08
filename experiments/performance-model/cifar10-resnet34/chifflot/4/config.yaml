@@ -27,5 +27,6 @@ base:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:

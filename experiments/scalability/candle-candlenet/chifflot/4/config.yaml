@@ -26,6 +26,7 @@ baseline_scratch:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -57,5 +58,6 @@ nil:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:

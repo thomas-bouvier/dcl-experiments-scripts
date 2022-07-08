@@ -17,6 +17,9 @@ base:
   momentum:
   optimizer:
   no_cuda:
+  buffer_cuda:
+  use_dali: True
+  use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
@@ -58,6 +61,7 @@ baseline_naive:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -90,6 +94,7 @@ baseline_scratch:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -122,6 +127,7 @@ baseline_transfer:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -154,6 +160,7 @@ nil_r32:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -186,6 +193,7 @@ nil_r64:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -218,6 +226,7 @@ nil_r128:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -250,6 +259,7 @@ nil_r256:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -282,6 +292,7 @@ nil_r512:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -314,6 +325,7 @@ icarl_r32:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -346,6 +358,7 @@ icarl_r64:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -378,6 +391,7 @@ icarl_r128:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -410,6 +424,7 @@ icarl_r256:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
 
@@ -442,5 +457,6 @@ icarl_r512:
   weight_decay:
   results_dir:
   save_dir:
+  tensorboard: True
   tensorwatch:
   tensorwatch_port:
