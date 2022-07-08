@@ -87,11 +87,13 @@
     - fetch:
         src: "/root/experiments/timeline.json"
         dest: "{{ working_dir }}/"
-    #- debug:
-    #    msg: "Copying nsys profile from host to #experiment results"
-    #- fetch:
-    #    src: "/root/experiments/profile.nsys-rep"
-    #    dest: "{{ working_dir }}/"
+        fail_on_missing: no
+    - debug:
+        msg: "Copying nsys profile from host to experiment results"
+    - fetch:
+        src: "/root/experiments/profile.nsys-rep"
+        dest: "{{ working_dir }}/"
+        fail_on_missing: no
     - debug:
         msg: "Copying results from host to experiment results"
     - find:
