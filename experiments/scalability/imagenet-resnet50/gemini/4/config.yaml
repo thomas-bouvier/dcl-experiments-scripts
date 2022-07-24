@@ -1,19 +1,19 @@
 base:
-  dataset:
-  dataset_dir:
+  dataset: imagenet_blurred
+  dataset_dir: /dev/shm/datasets
   tasksets_config:
   shard:
   agent:
   agent_config:
-  model:
+  model: resnet50
   model_config:
   checkpoint:
-  batch_size:
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs:
-  lr:
+  epochs: 50
+  lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
@@ -34,14 +34,14 @@ base:
 
 baseline_naive:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent:
   agent_config:
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -67,14 +67,14 @@ baseline_naive:
 
 baseline_scratch:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -100,14 +100,14 @@ baseline_scratch:
 
 baseline_transfer:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config:
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -133,14 +133,14 @@ baseline_transfer:
 
 nil_r32:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 32}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -166,14 +166,14 @@ nil_r32:
 
 nil_r64:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 64}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -199,47 +199,14 @@ nil_r64:
 
 nil_r128:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 128}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 20
-  lr: 0.0125
-  momentum:
-  optimizer:
-  no_cuda:
-  buffer_cuda: True
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
-
-nil_r256:
-  dataset: imagenet_blurred
-  dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
-  shard:
-  agent: nil
-  agent_config: "{'num_representatives': 256}"
-  model: resnet
-  model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -265,14 +232,14 @@ nil_r256:
 
 nil_r512:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 512}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -298,14 +265,14 @@ nil_r512:
 
 icarl_r32:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 32}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -331,14 +298,14 @@ icarl_r32:
 
 icarl_r64:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 64}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -364,47 +331,14 @@ icarl_r64:
 
 icarl_r128:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 128}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 20
-  lr: 0.0125
-  momentum:
-  optimizer:
-  no_cuda:
-  buffer_cuda: True
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
-
-icarl_r256:
-  dataset: imagenet_blurred
-  dataset_dir:
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
-  shard:
-  agent: icarl
-  agent_config: "{'num_representatives': 256}"
-  model: resnet
-  model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
@@ -430,14 +364,14 @@ icarl_r256:
 
 icarl_r512:
   dataset: imagenet_blurred
-  dataset_dir:
+  dataset_dir: /dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 512}"
-  model: resnet
+  model: resnet50
   model_config:
-  batch_size: 256
+  batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:

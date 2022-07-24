@@ -39,7 +39,7 @@ baseline_naive:
   shard:
   agent:
   agent_config:
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -72,7 +72,7 @@ baseline_scratch:
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -105,7 +105,7 @@ baseline_transfer:
   shard:
   agent:
   agent_config:
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -138,7 +138,7 @@ nil_r32:
   shard:
   agent: nil
   agent_config: "{'num_representatives': 32}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -171,7 +171,7 @@ nil_r64:
   shard:
   agent: nil
   agent_config: "{'num_representatives': 64}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -204,7 +204,7 @@ nil_r128:
   shard:
   agent: nil
   agent_config: "{'num_representatives': 128}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -237,7 +237,7 @@ nil_r256:
   shard:
   agent: nil
   agent_config: "{'num_representatives': 256}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -270,7 +270,7 @@ nil_r512:
   shard:
   agent: nil
   agent_config: "{'num_representatives': 512}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -303,7 +303,7 @@ icarl_r32:
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 32}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -336,7 +336,7 @@ icarl_r64:
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 64}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -369,7 +369,7 @@ icarl_r128:
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 128}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -402,7 +402,7 @@ icarl_r256:
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 256}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
@@ -435,7 +435,7 @@ icarl_r512:
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 512}"
-  model: resnet
+  model: resnet50
   model_config:
   batch_size: 32
   eval_batch_size:
