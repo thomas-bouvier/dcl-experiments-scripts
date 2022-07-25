@@ -1,5 +1,10 @@
+# TODO POF
+# fp16_allreduce fails when amp is enabled
+# RuntimeError: set_storage is not allowed on a Tensor created from .data or .detach()
+# https://gist.github.com/alsrgv/0713add50fe49a409316832a31612dde
+
 base:
-  dataset: imagenet_blurred
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
   tasksets_config:
   shard:
@@ -11,8 +16,8 @@ base:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
-  dataloader_workers: 8
-  epochs: 90
+  dataloader_workers:
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -33,9 +38,9 @@ base:
   tensorwatch_port:
 
 baseline_naive:
-  dataset: imagenet_blurred
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent:
   agent_config:
@@ -45,12 +50,12 @@ baseline_naive:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda:
   use_dali: True
   use_amp: True
   seed:
@@ -61,14 +66,14 @@ baseline_naive:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
 baseline_scratch:
-  dataset: imagenet_blurred
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
@@ -78,12 +83,12 @@ baseline_scratch:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda:
   use_dali: True
   use_amp: True
   seed:
@@ -94,14 +99,14 @@ baseline_scratch:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
 baseline_transfer:
-  dataset: imagenet_blurred
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config:
@@ -111,12 +116,12 @@ baseline_transfer:
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda:
   use_dali: True
   use_amp: True
   seed:
@@ -127,24 +132,24 @@ baseline_transfer:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
-nil_r32:
-  dataset: imagenet_blurred
+nil:
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'num_representatives': 32}"
+  agent_config: "{'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -160,24 +165,24 @@ nil_r32:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
-nil_r64:
-  dataset: imagenet_blurred
+nil_cpp:
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'num_representatives': 64}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -193,24 +198,24 @@ nil_r64:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
-nil_r128:
-  dataset: imagenet_blurred
+nil_global:
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'num_representatives': 128}"
+  agent_config: "{'implementation': 'global', 'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -226,24 +231,24 @@ nil_r128:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
-nil_r512:
-  dataset: imagenet_blurred
+nil_cpp_global:
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: nil
-  agent_config: "{'num_representatives': 512}"
+  agent_config: "{'implementation': 'cpp_global', 'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -259,24 +264,24 @@ nil_r512:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
-icarl_r32:
-  dataset: imagenet_blurred
+icarl:
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: icarl
-  agent_config: "{'num_representatives': 32}"
+  agent_config: "{'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -292,24 +297,24 @@ icarl_r32:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
 
-icarl_r64:
-  dataset: imagenet_blurred
+icarl_global:
+  dataset: imagenet100small
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
   shard:
   agent: icarl
-  agent_config: "{'num_representatives': 64}"
+  agent_config: "{'implementation': 'global', 'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 20
+  epochs: 50
   lr: 0.0125
   momentum:
   optimizer:
@@ -325,72 +330,6 @@ icarl_r64:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
-
-icarl_r128:
-  dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
-  shard:
-  agent: icarl
-  agent_config: "{'num_representatives': 128}"
-  model: resnet50
-  model_config:
-  batch_size: 128
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 20
-  lr: 0.0125
-  momentum:
-  optimizer:
-  no_cuda:
-  buffer_cuda: True
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
-
-icarl_r512:
-  dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
-  shard:
-  agent: icarl
-  agent_config: "{'num_representatives': 512}"
-  model: resnet50
-  model_config:
-  batch_size: 128
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 20
-  lr: 0.0125
-  momentum:
-  optimizer:
-  no_cuda:
-  buffer_cuda: True
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  tensorboard: True
+  tensorboard:
   tensorwatch:
   tensorwatch_port:
