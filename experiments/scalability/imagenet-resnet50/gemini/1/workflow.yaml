@@ -16,6 +16,9 @@
     - file:
         path: /tmp/datasets/ImageNet_blurred
         state: directory
+    - file:
+        path: /dev/shm/datasets/ImageNet_blurred
+        state: directory
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/train_blurred.tar.gz"
         dest: "/tmp/datasets/ImageNet_blurred/"
