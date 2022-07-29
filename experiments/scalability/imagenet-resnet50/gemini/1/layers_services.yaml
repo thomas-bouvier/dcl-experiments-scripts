@@ -2,7 +2,7 @@
 environment:
   name: g5k
   cluster: taurus
-  env_name: "debian11-x64-big"
+  env_name: https://api.grid5000.fr/sid/sites/lyon/public/tbouvier/debian11-x64-big-cuda.yaml
   job_name: horovod-pytorch-dcl-experiments-e2clab
   job_type: ["exotic", "deploy"]
   walltime: "02:00:00"
@@ -23,4 +23,4 @@ layers:
     gpu: True
     roles: [monitoring]
     cluster: gemini
-    quantity: 2
+    quantity: 1
