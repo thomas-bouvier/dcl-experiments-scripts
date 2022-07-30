@@ -10,7 +10,8 @@ Alternatively, you can simlimk the folder containing your app:
 
 ```
 cd dcl-experiments-e2clab
-ln -s ~/src/distributed-continual-learning/ artifacts/app/distributed-deep-learning
+mkdir artifacts/app
+ln -s ~/src/distributed-continual-learning/ artifacts/app/distributed-continual-learning
 ```
 
 In this repository, we use [distributed-continual-learning](https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning).
@@ -115,7 +116,7 @@ TensorWatch is using PyZMQ to publish training data, default port is 41459.
 
 ### `cifar10-icarl-resnet34`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -141,7 +142,7 @@ python main.py --agent icarl --model resnet --model-config "{'depth': 34}" --dat
 
 ### `cifar10-icarl-resnet101`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -167,7 +168,7 @@ python main.py --agent icarl --model resnet --model-config "{'depth': 101}" --da
 
 ### `cifar10-icarl-resnet152`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -194,7 +195,7 @@ python main.py --agent icarl --model resnet --model-config "{'depth': 152}" --da
 
 ### `cifar10-nil-resnet34`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -221,7 +222,7 @@ python main.py --agent nil --model resnet --model-config "{'depth': 34}" --datas
 
 ### `cifar10-nil-resnet101`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -247,7 +248,7 @@ python main.py --agent nil --model resnet --model-config "{'depth': 101}" --data
 
 ### `cifar10-nil-resnet152`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -273,7 +274,7 @@ python main.py --agent nil --model resnet --model-config "{'depth': 152}" --data
 
 ### `mnist-icarl-mnistnet`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -299,7 +300,7 @@ python main.py --agent icarl --model mnistnet --dataset mnist --tasksets-config 
 
 ### `mnist-nil-mnistnet`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod
@@ -325,7 +326,7 @@ python main.py --agent nil --model mnistnet --dataset mnist --tasksets-config "{
 
 ### `candle-nil-candlenet`
 
-Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-deep-learning
+Relies on: https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning
 
 - Type: continual learning
 - Distributed framework: Horovod

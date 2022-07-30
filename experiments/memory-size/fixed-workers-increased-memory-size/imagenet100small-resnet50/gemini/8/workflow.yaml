@@ -4,18 +4,19 @@
     - debug:
         msg: "Copying the application"
     - ansible.posix.synchronize:
-        src: "{{ artifacts_dir }}/app/distributed-deep-learning"
+        src: "{{ artifacts_dir }}/app/distributed-continual-learning"
         dest: "/root"
+        copy_links: yes
     - debug:
         msg: "Copying the job config"
     - ansible.posix.synchronize:
         src: "{{ scenario_dir }}/config.yaml"
-        dest: "/root/distributed-deep-learning"
+        dest: "/root/distributed-continual-learning"
     - debug:
         msg: "Copying the model checkpoint"
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar"
-        dest: "/root/distributed-deep-learning"
+        dest: "/root/distributed-continual-learning"
     - debug:
         msg: "Copying dataset"
     - file:
@@ -50,7 +51,7 @@
         owner: root
   launch:
     - shell: "docker exec {{ _self.container_name }} ldconfig"
-    - shell: "docker cp /root/distributed-deep-learning/. {{ _self.container_name }}:/experiments/"
+    - shell: "docker cp /root/distributed-continual-learning/. {{ _self.container_name }}:/experiments/"
     - debug:
         msg: "Installing Python dependencies"
     - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
