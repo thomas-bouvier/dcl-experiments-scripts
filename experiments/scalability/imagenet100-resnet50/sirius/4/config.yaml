@@ -1,0 +1,330 @@
+base:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config:
+  shard:
+  agent:
+  agent_config:
+  model: resnet50
+  model_config:
+  checkpoint:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+baseline_naive:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent:
+  agent_config:
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+baseline_scratch:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25, 'concatenate_tasksets': True}"
+  shard:
+  agent:
+  agent_config: "{'reset_state_dict': True}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+baseline_transfer:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25, 'concatenate_tasksets': True}"
+  shard:
+  agent:
+  agent_config:
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+nil:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'num_representatives': 26}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda: True
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_cpp:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 26}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda: True
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_global:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'global', 'num_representatives': 26}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda: True
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+nil_cpp_global:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: nil
+  agent_config: "{'implementation': 'cpp_global', 'num_representatives': 26}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda: True
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard: True
+  tensorwatch:
+  tensorwatch_port:
+
+icarl:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: icarl
+  agent_config: "{'num_representatives': 26}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda: True
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
+
+icarl_global:
+  dataset: imagenet100
+  dataset_dir: /dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 25, 'increment': 25}"
+  shard:
+  agent: icarl
+  agent_config: "{'implementation': 'global', 'num_representatives': 26}"
+  model: resnet50
+  model_config:
+  batch_size: 128
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 50
+  lr: 0.0125
+  momentum:
+  optimizer:
+  no_cuda:
+  buffer_cuda: True
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  tensorboard:
+  tensorwatch:
+  tensorwatch_port:
