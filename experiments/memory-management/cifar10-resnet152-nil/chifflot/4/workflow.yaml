@@ -27,6 +27,7 @@
     - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
     - debug:
         msg: "Compiling C++ component"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} ln -s distributed-rehearsal-buffer cpp_loader"
     - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && make -C cpp_loader'"
     - shell: "docker exec -w /experiments/agents {{ _self.container_name }} ln -sf ../cpp_loader/rehearsal rehearsal"
 
