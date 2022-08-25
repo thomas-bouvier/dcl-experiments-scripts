@@ -92,7 +92,7 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     #- shell: "docker exec -w /experiments {{ _self.container_name }} mpirun --allow-run-as-root -np 2 -H {{ horovod1_1.url }}:2 -bind-to none -map-by slot -mca plm_rsh_args \"-p 12345\" -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x PATH -mca pml ob1 -mca btl ^openib python main.py --config {{ app_conf }} --save-dir .'"
-    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --checkpoint checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar --save-dir .'"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --agent-config "{'remote_nodes': 'tcp://127.0.0.1:1234,tcp://127.0.0.1:1235'}" --checkpoint checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar --save-dir .'"
     #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile bash -c '. /etc/profile && horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir .'"
   finalize:
     - debug:
