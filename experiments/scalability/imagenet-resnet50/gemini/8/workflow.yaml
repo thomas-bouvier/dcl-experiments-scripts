@@ -69,7 +69,7 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --agent-config "{'remote_nodes': 'tcp://127.0.0.1:1234,tcp://127.0.0.1:1235,tcp://127.0.0.1:1236,tcp://127.0.0.1:1237,tcp://127.0.0.1:1238,tcp://127.0.0.1:1239,tcp://127.0.0.1:1240,tcp://127.0.0.1:1241'}" --checkpoint checkpoint_initial_resnet50_imagenet_{{ current_repeat }}.pth.tar --save-dir .'"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --agent-config \"{'remote_nodes': 'tcp://127.0.0.1:1234,tcp://127.0.0.1:1235,tcp://127.0.0.1:1236,tcp://127.0.0.1:1237,tcp://127.0.0.1:1238,tcp://127.0.0.1:1239,tcp://127.0.0.1:1240,tcp://127.0.0.1:1241'}\" --checkpoint checkpoint_initial_resnet50_imagenet_{{ current_repeat }}.pth.tar --save-dir .'"
     #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile bash -c '. /etc/profile && horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir .'"
   finalize:
     - debug:
