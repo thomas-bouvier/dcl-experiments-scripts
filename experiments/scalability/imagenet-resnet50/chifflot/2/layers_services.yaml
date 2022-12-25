@@ -18,7 +18,7 @@ layers:
     registry_password: ""
     wandb_api_key: ""
     wandb_mode: "run"
-    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.25.0"
+    image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.26.1-spack"
     gpu: True
     roles: [monitoring]
     servers: ["chifflot-1.lille.grid5000.fr"]

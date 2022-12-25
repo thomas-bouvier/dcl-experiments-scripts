@@ -50,7 +50,7 @@ baseline_naive:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -83,7 +83,7 @@ baseline_scratch:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -116,7 +116,7 @@ baseline_transfer:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -149,7 +149,7 @@ nil_r32:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -182,7 +182,7 @@ nil_r64:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -215,7 +215,7 @@ nil_r128:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -248,7 +248,7 @@ nil_r256:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -281,7 +281,7 @@ nil_r512:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -314,7 +314,7 @@ icarl_r32:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -347,7 +347,7 @@ icarl_r64:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -380,7 +380,7 @@ icarl_r128:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -413,7 +413,7 @@ icarl_r256:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -446,7 +446,7 @@ icarl_r512:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:

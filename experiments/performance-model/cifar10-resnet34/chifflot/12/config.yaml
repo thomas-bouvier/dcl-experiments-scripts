@@ -16,7 +16,7 @@ base:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:

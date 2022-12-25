@@ -149,7 +149,7 @@ nil:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -182,7 +182,7 @@ nil_cpp:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -215,7 +215,7 @@ nil_global:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -248,7 +248,7 @@ nil_cpp_global:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -281,7 +281,7 @@ icarl:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -314,7 +314,7 @@ icarl_global:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:

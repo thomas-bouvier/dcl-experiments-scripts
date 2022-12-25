@@ -16,7 +16,7 @@ case1_icarl_c10:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -49,7 +49,7 @@ case1_icarl_c20:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -82,7 +82,7 @@ case1_icarl_c40:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -115,7 +115,7 @@ case2_icarl:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -148,7 +148,7 @@ case1_nil_c10:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -181,7 +181,7 @@ case1_nil_c20:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -214,7 +214,7 @@ case1_nil_c40:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -247,7 +247,7 @@ case2_nil:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:

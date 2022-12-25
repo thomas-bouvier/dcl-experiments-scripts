@@ -35,7 +35,7 @@ base:
 baseline_naive:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent:
   agent_config:
@@ -50,7 +50,7 @@ baseline_naive:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -68,7 +68,7 @@ baseline_naive:
 baseline_scratch:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
@@ -83,7 +83,7 @@ baseline_scratch:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -101,7 +101,7 @@ baseline_scratch:
 baseline_transfer:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config:
@@ -116,7 +116,7 @@ baseline_transfer:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -134,7 +134,7 @@ baseline_transfer:
 nil:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 26}"
@@ -149,7 +149,7 @@ nil:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -167,7 +167,7 @@ nil:
 nil_cpp:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
   agent_config: "{'implementation': 'cpp', 'num_representatives': 26}"
@@ -182,7 +182,7 @@ nil_cpp:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -200,7 +200,7 @@ nil_cpp:
 nil_global:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 26}"
@@ -215,7 +215,7 @@ nil_global:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -233,7 +233,7 @@ nil_global:
 nil_cpp_global:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
   agent_config: "{'implementation': 'cpp_global', 'num_representatives': 26}"
@@ -248,7 +248,7 @@ nil_cpp_global:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -266,7 +266,7 @@ nil_cpp_global:
 icarl:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 26}"
@@ -281,7 +281,7 @@ icarl:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -299,7 +299,7 @@ icarl:
 icarl_global:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 100, 'increment': 100}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: icarl
   agent_config: "{'implementation': 'global', 'num_representatives': 26}"
@@ -314,7 +314,7 @@ icarl_global:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda: True
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:

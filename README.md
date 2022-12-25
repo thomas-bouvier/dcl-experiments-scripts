@@ -39,7 +39,7 @@ ln -s /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets/ artifacts
 
 An image containing Horovod + PyTorch is required to deploy the application.
 
-If you have access to the Inria Gitlab, an image containing Horovod 0.25.0 + PyTorch 1.12 is available at `registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.25.0`. This container registry is protected by an access token, to be given in `layers_services.yml` files:
+If you have access to the Inria Gitlab, an image containing Horovod 0.26.1 + PyTorch 1.13.1 is available at `registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.26.1-spack`. This container registry is protected by an access token, to be given in `layers_services.yml` files:
 
 ```
 cd dcl-experiments-e2clab
