@@ -50,7 +50,7 @@
     - shell: "docker cp /root/distributed-continual-learning/. {{ _self.container_name }}:/experiments/"
     - debug:
         msg: "Installing Python dependencies"
-    - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && pip install -r requirements.txt'"
     - debug:
         msg: "Compiling C++ component"
     - shell: "docker exec -w /experiments {{ _self.container_name }} ln -s distributed-rehearsal-buffer cpp_loader"

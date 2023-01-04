@@ -29,7 +29,7 @@
     - shell: "docker cp /root/datasets/CIFAR100 {{ _self.container_name }}:/experiments/datasets/"
     - debug:
         msg: "Installing Python dependencies"
-    - shell: "docker exec -w /experiments {{ _self.container_name }} pip install -r requirements.txt"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && pip install -r requirements.txt'"
     - debug:
         msg: "Compiling C++ component"
     - shell: "docker exec -w /experiments {{ _self.container_name }} ln -s distributed-rehearsal-buffer cpp_loader"
