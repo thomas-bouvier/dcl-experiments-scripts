@@ -70,7 +70,7 @@
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     #nsys profile --trace=cuda,nvtx -o
-    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --checkpoint checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar --save-dir .'"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && LD_LIBRARY_PATH=/opt/view/lib:/opt/view/lib64:/opt/view/lib/python3.10/site-packages/torch/lib horovodrun -np 8 -H {{ horovod1_1.url }}:8 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --checkpoint checkpoint_initial_resnet50_imagenet100_{{ current_repeat }}.pth.tar --save-dir .'"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"

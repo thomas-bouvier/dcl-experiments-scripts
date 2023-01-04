@@ -43,8 +43,8 @@
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir .'"
-    #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile bash -c '. /etc/profile && horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir .'"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && LD_LIBRARY_PATH=/opt/view/lib:/opt/view/lib64:/opt/view/lib/python3.10/site-packages/torch/lib horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir .'"
+    #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile bash -c '. /etc/profile && LD_LIBRARY_PATH=/opt/view/lib:/opt/view/lib64:/opt/view/lib/python3.10/site-packages/torch/lib horovodrun -np 1 -H {{ horovod1_1.url }}:1 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir .'"
   finalize:
     - debug:
         msg: "Copying logs from Docker to host"
