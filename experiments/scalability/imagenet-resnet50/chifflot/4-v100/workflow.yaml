@@ -79,7 +79,7 @@
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/mnt/view/chifflot/lib:/mnt/view/chifflot/lib64:/mnt/view/chifflot/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/mnt/view/chifflot/lib:/mnt/view/chifflot/lib64:/mnt/view/chifflot/lib/python3.10/site-packages/torch/lib horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"

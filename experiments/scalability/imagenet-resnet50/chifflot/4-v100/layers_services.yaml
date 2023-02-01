@@ -19,4 +19,4 @@ layers:
     g5k_pass: ""
     g5k_job_id: ""
     roles: [monitoring]
-    servers: ["chifflot-7.lille.grid5000.fr"]
+    servers: ["chifflot-7.lille.grid5000.fr", "chifflot-8.lille.grid5000.fr"]

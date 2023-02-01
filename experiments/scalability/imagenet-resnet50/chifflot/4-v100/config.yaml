@@ -134,7 +134,7 @@ nil:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
-  agent_config: "{'num_representatives': 26, 'buffer_cuda': False}"
+  agent_config: "{'num_representatives': 26, 'buffer_cuda': True}"
   model: resnet50
   model_config:
   batch_size: 128
@@ -198,7 +198,7 @@ nil_local:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'local', 'num_representatives': 26, 'buffer_cuda': False}"
+  agent_config: "{'implementation': 'local', 'num_representatives': 26}"
   model: resnet50
   model_config:
   batch_size: 128
