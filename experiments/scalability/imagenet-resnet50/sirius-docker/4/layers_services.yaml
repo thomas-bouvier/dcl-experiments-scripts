@@ -14,11 +14,12 @@ layers:
 - name: cloud
   services:
   - name: Horovod
+    docker: True
     registry_url: "registry.gitlab.inria.fr"
     registry_username: "tbouvier"
     registry_password: ""
     wandb_api_key: ""
-    wandb_mode: "run"
+    wandb_mode: "offline"
     image: "registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.26.1-spack"
     gpu: True
     roles: [monitoring]
