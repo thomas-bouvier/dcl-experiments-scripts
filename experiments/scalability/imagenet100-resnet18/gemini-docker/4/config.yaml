@@ -17,7 +17,7 @@ base:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda:
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -50,7 +50,7 @@ baseline_naive:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda:
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -83,7 +83,7 @@ baseline_scratch:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda:
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
@@ -116,7 +116,7 @@ baseline_transfer:
   momentum:
   optimizer:
   no_cuda:
-  buffer_cuda:
+  buffer_cuda: False
   use_dali: True
   use_amp: True
   seed:
