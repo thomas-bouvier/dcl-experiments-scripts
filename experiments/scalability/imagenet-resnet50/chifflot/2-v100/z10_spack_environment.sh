@@ -1,4 +1,4 @@
-export SPACK_ENV=/root/spack-envs/chifflot-v100;
+export SPACK_ENV=/root/spack-envs/chifflot/v100;
 alias despacktivate='spack env deactivate';
 export ACLOCAL_PATH=/mnt/view/chifflot-v100/share/aclocal;
 export CMAKE_PREFIX_PATH=/mnt/view/chifflot-v100;
