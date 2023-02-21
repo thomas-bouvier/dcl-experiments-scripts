@@ -28,8 +28,8 @@
     - debug:
         msg: "Compiling C++ component"
     #- shell: "ln -s /root/distributed-continual-learning/distributed-rehearsal-buffer /root/distributed-continual-learning/cpp_loader"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && SPACK_VIEW=/mnt/view/chifflot-v100 make -C cpp_loader"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && SPACK_VIEW=/mnt/view/chifflot-v100 make test -C cpp_loader"
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && SPACK_VIEW=/mnt/view/chifflot-p100 make -C cpp_loader"
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && SPACK_VIEW=/mnt/view/chifflot-p100 make test -C cpp_loader"
     - debug:
         msg: "Copying the model checkpoint"
     - ansible.posix.synchronize:
@@ -79,7 +79,7 @@
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/mnt/view/chifflot-v100/lib:/mnt/view/chifflot-v100/lib64:/mnt/view/chifflot-v100/lib/python3.10/site-packages/torch/lib horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/mnt/view/chifflot-p100/lib:/mnt/view/chifflot-p100/lib64:/mnt/view/chifflot-p100/lib/python3.10/site-packages/torch/lib horovodrun -np 8 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"
