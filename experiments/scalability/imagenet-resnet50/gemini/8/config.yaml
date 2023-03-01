@@ -166,7 +166,7 @@ nil_cpp:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
   shard:
   agent: nil
-  agent_config: "{'implementation': 'cpp', 'num_representatives': 26, 'provider': 'na+sm://', 'discover_endpoints': True, 'cuda_rdma': False}"
+  agent_config: "{'implementation': 'cpp', 'num_representatives': 26, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
   model: resnet50
   model_config:
   batch_size: 128
