@@ -29,13 +29,12 @@ base:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_naive:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent:
   agent_config:
@@ -62,13 +61,12 @@ baseline_naive:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_scratch:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config: "{'reset_state_dict': True}"
@@ -95,13 +93,12 @@ baseline_scratch:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_transfer:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200, 'concatenate_tasksets': True}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   agent:
   agent_config:
@@ -128,13 +125,12 @@ baseline_transfer:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent: nil
   agent_config: "{'num_representatives': 26}"
@@ -161,13 +157,12 @@ nil:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent: nil
   agent_config: "{'implementation': 'cpp', 'num_representatives': 26}"
@@ -194,13 +189,12 @@ nil_cpp:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent: nil
   agent_config: "{'implementation': 'global', 'num_representatives': 26}"
@@ -227,13 +221,12 @@ nil_global:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_global:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent: nil
   agent_config: "{'implementation': 'cpp_global', 'num_representatives': 26}"
@@ -260,13 +253,12 @@ nil_cpp_global:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent: icarl
   agent_config: "{'num_representatives': 26}"
@@ -293,13 +285,12 @@ icarl:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_global:
   dataset: imagenet_blurred
   dataset_dir: /dev/shm/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 200, 'increment': 200}"
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   agent: icarl
   agent_config: "{'implementation': 'global', 'num_representatives': 26}"
@@ -326,5 +317,4 @@ icarl_global:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+

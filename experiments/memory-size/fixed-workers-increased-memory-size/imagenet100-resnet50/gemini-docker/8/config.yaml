@@ -34,8 +34,7 @@ base:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_naive:
   dataset: imagenet100
@@ -67,8 +66,7 @@ baseline_naive:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_scratch:
   dataset: imagenet100
@@ -100,8 +98,7 @@ baseline_scratch:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_transfer:
   dataset: imagenet100
@@ -133,8 +130,7 @@ baseline_transfer:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_r26:
   dataset: imagenet100
@@ -166,8 +162,7 @@ nil_r26:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_r26:
   dataset: imagenet100
@@ -199,8 +194,7 @@ nil_cpp_r26:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global_r26:
   dataset: imagenet100
@@ -232,8 +226,7 @@ nil_global_r26:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_r65:
   dataset: imagenet100
@@ -265,8 +258,7 @@ nil_r65:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_r65:
   dataset: imagenet100
@@ -298,8 +290,7 @@ nil_cpp_r65:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global_r65:
   dataset: imagenet100
@@ -331,8 +322,7 @@ nil_global_r65:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_r104:
   dataset: imagenet100
@@ -364,8 +354,7 @@ nil_r104:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_r104:
   dataset: imagenet100
@@ -397,8 +386,7 @@ nil_cpp_r104:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global_r104:
   dataset: imagenet100
@@ -430,8 +418,7 @@ nil_global_r104:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_r130:
   dataset: imagenet100
@@ -463,8 +450,7 @@ nil_r130:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_r130:
   dataset: imagenet100
@@ -496,8 +482,7 @@ nil_cpp_r130:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global_r130:
   dataset: imagenet100
@@ -529,8 +514,7 @@ nil_global_r130:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_r195:
   dataset: imagenet100
@@ -562,8 +546,7 @@ nil_r195:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_r195:
   dataset: imagenet100
@@ -595,8 +578,7 @@ nil_cpp_r195:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global_r195:
   dataset: imagenet100
@@ -628,8 +610,7 @@ nil_global_r195:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_r260:
   dataset: imagenet100
@@ -661,8 +642,7 @@ nil_r260:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_r260:
   dataset: imagenet100
@@ -694,8 +674,7 @@ nil_cpp_r260:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global_r260:
   dataset: imagenet100
@@ -727,8 +706,7 @@ nil_global_r260:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_r26:
   dataset: imagenet100
@@ -760,8 +738,7 @@ icarl_r26:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_v1_r26:
   dataset: imagenet100
@@ -793,8 +770,7 @@ icarl_v1_r26:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_r65:
   dataset: imagenet100
@@ -826,8 +802,7 @@ icarl_r65:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_v1_r65:
   dataset: imagenet100
@@ -859,8 +834,7 @@ icarl_v1_r65:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_r104:
   dataset: imagenet100
@@ -892,8 +866,7 @@ icarl_r104:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_v1_r104:
   dataset: imagenet100
@@ -925,8 +898,7 @@ icarl_v1_r104:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_r130:
   dataset: imagenet100
@@ -958,8 +930,7 @@ icarl_r130:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_v1_r130:
   dataset: imagenet100
@@ -991,8 +962,7 @@ icarl_v1_r130:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_r195:
   dataset: imagenet100
@@ -1024,8 +994,7 @@ icarl_r195:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_v1_r195:
   dataset: imagenet100
@@ -1057,8 +1026,7 @@ icarl_v1_r195:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_r260:
   dataset: imagenet100
@@ -1090,8 +1058,7 @@ icarl_r260:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_v1_r260:
   dataset: imagenet100
@@ -1123,5 +1090,3 @@ icarl_v1_r260:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:

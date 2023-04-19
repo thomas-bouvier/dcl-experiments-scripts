@@ -34,8 +34,7 @@ base:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_naive:
   dataset: imagenet100small
@@ -66,9 +65,7 @@ baseline_naive:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 baseline_scratch:
   dataset: imagenet100small
@@ -99,9 +96,7 @@ baseline_scratch:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 baseline_transfer:
   dataset: imagenet100small
@@ -132,9 +127,7 @@ baseline_transfer:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r26:
   dataset: imagenet100small
@@ -165,9 +158,7 @@ nil_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v1_r26:
   dataset: imagenet100small
@@ -198,9 +189,7 @@ nil_v1_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v2_r26:
   dataset: imagenet100small
@@ -231,9 +220,7 @@ nil_v2_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v3_r26:
   dataset: imagenet100small
@@ -264,9 +251,7 @@ nil_v3_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v4_r26:
   dataset: imagenet100small
@@ -297,9 +282,7 @@ nil_v4_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r26:
   dataset: imagenet100small
@@ -330,9 +313,7 @@ nil_global_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r65:
   dataset: imagenet100small
@@ -363,9 +344,7 @@ nil_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v1_r65:
   dataset: imagenet100small
@@ -396,9 +375,7 @@ nil_v1_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v2_r65:
   dataset: imagenet100small
@@ -429,9 +406,7 @@ nil_v2_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v3_r65:
   dataset: imagenet100small
@@ -462,9 +437,7 @@ nil_v3_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v4_r65:
   dataset: imagenet100small
@@ -495,9 +468,7 @@ nil_v4_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r65:
   dataset: imagenet100small
@@ -528,9 +499,7 @@ nil_global_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r104:
   dataset: imagenet100small
@@ -561,9 +530,7 @@ nil_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v1_r104:
   dataset: imagenet100small
@@ -594,9 +561,7 @@ nil_v1_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v2_r104:
   dataset: imagenet100small
@@ -627,9 +592,7 @@ nil_v2_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v3_r104:
   dataset: imagenet100small
@@ -660,9 +623,7 @@ nil_v3_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v4_r104:
   dataset: imagenet100small
@@ -693,9 +654,7 @@ nil_v4_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r104:
   dataset: imagenet100small
@@ -726,9 +685,7 @@ nil_global_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r130:
   dataset: imagenet100small
@@ -759,9 +716,7 @@ nil_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v1_r130:
   dataset: imagenet100small
@@ -792,9 +747,7 @@ nil_v1_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v2_r130:
   dataset: imagenet100small
@@ -825,9 +778,7 @@ nil_v2_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v3_r130:
   dataset: imagenet100small
@@ -858,9 +809,7 @@ nil_v3_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v4_r130:
   dataset: imagenet100small
@@ -891,9 +840,7 @@ nil_v4_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r130:
   dataset: imagenet100small
@@ -924,9 +871,7 @@ nil_global_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r195:
   dataset: imagenet100small
@@ -957,9 +902,7 @@ nil_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v1_r195:
   dataset: imagenet100small
@@ -990,9 +933,7 @@ nil_v1_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v2_r195:
   dataset: imagenet100small
@@ -1023,9 +964,7 @@ nil_v2_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v3_r195:
   dataset: imagenet100small
@@ -1056,9 +995,7 @@ nil_v3_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v4_r195:
   dataset: imagenet100small
@@ -1089,9 +1026,7 @@ nil_v4_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r195:
   dataset: imagenet100small
@@ -1122,9 +1057,7 @@ nil_global_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r260:
   dataset: imagenet100small
@@ -1155,9 +1088,7 @@ nil_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v1_r260:
   dataset: imagenet100small
@@ -1188,9 +1119,7 @@ nil_v1_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v2_r260:
   dataset: imagenet100small
@@ -1221,9 +1150,7 @@ nil_v2_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v3_r260:
   dataset: imagenet100small
@@ -1254,9 +1181,7 @@ nil_v3_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_v4_r260:
   dataset: imagenet100small
@@ -1287,9 +1212,7 @@ nil_v4_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r260:
   dataset: imagenet100small
@@ -1320,9 +1243,7 @@ nil_global_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r26:
   dataset: imagenet100small
@@ -1353,9 +1274,7 @@ icarl_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_v1_r26:
   dataset: imagenet100small
@@ -1386,9 +1305,7 @@ icarl_v1_r26:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r65:
   dataset: imagenet100small
@@ -1419,9 +1336,7 @@ icarl_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_v1_r65:
   dataset: imagenet100small
@@ -1452,9 +1367,7 @@ icarl_v1_r65:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r104:
   dataset: imagenet100small
@@ -1485,9 +1398,7 @@ icarl_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_v1_r104:
   dataset: imagenet100small
@@ -1518,9 +1429,7 @@ icarl_v1_r104:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r130:
   dataset: imagenet100small
@@ -1551,9 +1460,7 @@ icarl_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_v1_r130:
   dataset: imagenet100small
@@ -1584,9 +1491,7 @@ icarl_v1_r130:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r195:
   dataset: imagenet100small
@@ -1617,9 +1522,7 @@ icarl_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_v1_r195:
   dataset: imagenet100small
@@ -1650,9 +1553,7 @@ icarl_v1_r195:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r260:
   dataset: imagenet100small
@@ -1683,9 +1584,7 @@ icarl_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_v1_r260:
   dataset: imagenet100small
@@ -1716,6 +1615,4 @@ icarl_v1_r260:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False

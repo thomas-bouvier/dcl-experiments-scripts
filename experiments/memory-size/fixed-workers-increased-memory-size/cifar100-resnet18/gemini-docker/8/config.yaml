@@ -29,8 +29,7 @@ base:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_naive:
   dataset: cifar100
@@ -61,9 +60,7 @@ baseline_naive:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 baseline_scratch:
   dataset: cifar100
@@ -94,9 +91,7 @@ baseline_scratch:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 baseline_transfer:
   dataset: cifar100
@@ -127,9 +122,7 @@ baseline_transfer:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r32:
   dataset: cifar100
@@ -160,9 +153,7 @@ nil_r32:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_cpp_r32:
   dataset: cifar100
@@ -193,9 +184,7 @@ nil_cpp_r32:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r32:
   dataset: cifar100
@@ -226,9 +215,7 @@ nil_global_r32:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r64:
   dataset: cifar100
@@ -259,9 +246,7 @@ nil_r64:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_cpp_r64:
   dataset: cifar100
@@ -292,9 +277,7 @@ nil_cpp_r64:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r64:
   dataset: cifar100
@@ -325,9 +308,7 @@ nil_global_r64:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r128:
   dataset: cifar100
@@ -358,9 +339,7 @@ nil_r128:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_cpp_r128:
   dataset: cifar100
@@ -391,9 +370,7 @@ nil_cpp_r128:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r128:
   dataset: cifar100
@@ -424,9 +401,7 @@ nil_global_r128:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r256:
   dataset: cifar100
@@ -457,9 +432,7 @@ nil_r256:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_cpp_r256:
   dataset: cifar100
@@ -490,9 +463,7 @@ nil_cpp_r256:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r256:
   dataset: cifar100
@@ -523,9 +494,7 @@ nil_global_r256:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r512:
   dataset: cifar100
@@ -556,9 +525,7 @@ nil_r512:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_cpp_r512:
   dataset: cifar100
@@ -589,9 +556,7 @@ nil_cpp_r512:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_global_r512:
   dataset: cifar100
@@ -622,9 +587,7 @@ nil_global_r512:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r32:
   dataset: cifar100
@@ -655,9 +618,7 @@ icarl_r32:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r64:
   dataset: cifar100
@@ -688,9 +649,7 @@ icarl_r64:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r128:
   dataset: cifar100
@@ -721,9 +680,7 @@ icarl_r128:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r256:
   dataset: cifar100
@@ -754,9 +711,7 @@ icarl_r256:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl_r512:
   dataset: cifar100
@@ -787,6 +742,4 @@ icarl_r512:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False

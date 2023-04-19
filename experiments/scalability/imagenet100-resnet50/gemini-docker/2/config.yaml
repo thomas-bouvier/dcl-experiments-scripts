@@ -29,8 +29,7 @@ base:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_naive:
   dataset: imagenet100
@@ -62,8 +61,7 @@ baseline_naive:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_scratch:
   dataset: imagenet100
@@ -95,8 +93,7 @@ baseline_scratch:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_transfer:
   dataset: imagenet100
@@ -128,8 +125,7 @@ baseline_transfer:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil:
   dataset: imagenet100
@@ -161,8 +157,7 @@ nil:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp:
   dataset: imagenet100
@@ -194,8 +189,7 @@ nil_cpp:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_global:
   dataset: imagenet100
@@ -227,8 +221,7 @@ nil_global:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 nil_cpp_global:
   dataset: imagenet100
@@ -259,9 +252,7 @@ nil_cpp_global:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 icarl:
   dataset: imagenet100
@@ -293,8 +284,7 @@ icarl:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 icarl_global:
   dataset: imagenet100
@@ -326,5 +316,4 @@ icarl_global:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+

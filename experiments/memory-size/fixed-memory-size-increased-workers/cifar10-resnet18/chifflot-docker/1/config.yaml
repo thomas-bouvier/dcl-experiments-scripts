@@ -29,8 +29,7 @@ base:
   results_dir:
   save_dir:
   tensorboard:
-  tensorwatch:
-  tensorwatch_port:
+
 
 baseline_naive:
   dataset: cifar10
@@ -61,9 +60,7 @@ baseline_naive:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 baseline_scratch:
   dataset: cifar10
@@ -94,9 +91,7 @@ baseline_scratch:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 baseline_transfer:
   dataset: cifar10
@@ -127,9 +122,7 @@ baseline_transfer:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r12:
   dataset: cifar10
@@ -160,9 +153,7 @@ nil_r12:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
 
 nil_r600:
   dataset: cifar10
@@ -193,6 +184,4 @@ nil_r600:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard: True
-  tensorwatch:
-  tensorwatch_port:
+  tensorboard: False
