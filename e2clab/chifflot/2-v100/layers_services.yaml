@@ -2,8 +2,8 @@
 environment:
   name: g5k
   cluster: chetemi
-  env_name: https://api.grid5000.fr/sid/sites/lyon/public/tbouvier/debian11-x64-big-cuda-3.yaml
-  job_name: horovod-pytorch-dcl-experiments-e2clab
+  env_name: https://api.grid5000.fr/sid/sites/lille/public/tbouvier/debian11-x64-big-cuda-3.yaml
+  job_name: dcl-experiments-lille-v100
   walltime: "01:00:00"
 #monitoring:
 #  type: tig
