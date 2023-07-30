@@ -1,22 +1,26 @@
 # dcl-experiments-scripts
 
-## Artifacts
+## Grid'5000
 
-### Application
+### Installation
+
+
+
+### Artifacts
+
+#### Application
 
 On the g5k frontend, place your application in `dcl-experiments-scripts/artifacts/app`
 
 Alternatively, you can simlimk the folder containing your app:
 
 ```console
-cd dcl-experiments-scripts
-mkdir artifacts/app
-ln -s ~/src/distributed-continual-learning/ artifacts/app/distributed-continual-learning
+ln -s /home/tbouvier/src/distributed-continual-learning/ /home/tbouvier/src/dcl-experiments-scripts/artifacts/app/distributed-continual-learning
 ```
 
 In this repository, we use [distributed-continual-learning](https://gitlab.inria.fr/Kerdata/Kerdata-Codes/distributed-continual-learning).
 
-### Datasets
+#### Datasets
 
 Place the following datasets in `/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets` (adapt to your Group Storage):
 
@@ -33,7 +37,7 @@ cd dcl-experiments-e2clab
 ln -s /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets/ artifacts/datasets
 ```
 
-## Deployment
+### Deployment
 
 The E2Clab docs can be found here https://e2clab.gitlabpages.inria.fr/e2clab/index.html.
 
@@ -60,7 +64,7 @@ In the `layers_services.yaml` of the experiment to run, fill the required attrib
 The `g5k_pass` and `g5k_job_id` are needed to mount a group storage from a deployed node. The group storage should contain a Spack installation.
 -->
 
-### Docker
+### Deployment with Docker (not advised)
 
 In the `layers_services.yaml` of the experiment to run, fill the required attributes:
 
@@ -74,16 +78,16 @@ In the `layers_services.yaml` of the experiment to run, fill the required attrib
 An image containing Horovod + PyTorch is required to deploy the application. If you have access to the Inria Gitlab, such an image is available at `registry.gitlab.inria.fr/kerdata/kerdata-codes/horovod-images:0.26.1-spack`. This container registry is protected by an access token, to be given in `layers_services.yml` files:
 
 ```console
-cd dcl-experiments-e2clab
+cd dcl-experiments-scripts
 find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
 ```
 
-## Monitoring
+### Monitoring
 
-### Weights & Biases
+#### Weights & Biases
 
 ```console
-cd dcl-experiments-e2clab
+cd dcl-experiments-scripts
 
 # If using bare-metal deployment
 find . \( -type d -name .git -prune \) -o -type f -name "z20_wandb_environment.sh" -print0 | xargs -0 sed -i 's/WANDB_MODE=offline;/WANDB_MODE=run;/g'
@@ -94,7 +98,7 @@ find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -
 find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -print0 | xargs -0 sed -i 's/wandb_api_key: ""/wandb_api_key: "<token>"/g'
 ```
 
-### Grafana
+#### Grafana
 
 To monitor system metrics (including GPU metrics) in real-time:
 
@@ -106,7 +110,7 @@ Open `localhost:3000` in your browser.
 
 Some useful Grafana dashboards are hosted at https://gitlab.inria.fr/Kerdata/Kerdata-Codes/grafana-gpu-dashboard.
 
-### TensorBoard
+#### TensorBoard
 
 To monitor deep learning training metrics in real-time in TensorBoard:
 
@@ -115,25 +119,7 @@ ssh -NL 6006:127.0.0.1:6006 chifflot-2.lille.grid5000.fr
 ```
 
 Open `localhost:6006` in your browser.
-### TensorWatch
 
-To monitor deep learning training metrics in real-time in a Jupyter notebook:
+## ThetaGPU
 
-```console
-ssh -NL 41459:chifflot-2.lille.grid5000.fr:41459 access.grid5000.fr
-```
-
-Open a notebook and connect to TensorWatch:
-
-```python
-%matplotlib notebook
-import tensorwatch as tw
-client = tw.WatcherClient(port=0)
-
-# Plot training loss
-s0 = client.open_stream(name='train_loss')
-v0 = tw.Visualizer(stream=s0)
-v0.show()
-```
-
-TensorWatch is using PyZMQ to publish training data, default port is 41459.
+Read the ALCF guide [here](https://docs.alcf.anl.gov/theta-gpu/queueing-and-running-jobs/job-and-queue-scheduling/).

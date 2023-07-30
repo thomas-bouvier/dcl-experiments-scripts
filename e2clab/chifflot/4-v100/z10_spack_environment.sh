@@ -1,4 +1,4 @@
-export SPACK_ENV=/root/spack-envs/chifflot/v100;
+export SPACK_ENV=/home/tbouvier/spack-lille/spack-envs/chifflot/v100;
 alias despacktivate='spack env deactivate';
 export ACLOCAL_PATH=/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100/share/aclocal;
 export CMAKE_PREFIX_PATH=/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100;
