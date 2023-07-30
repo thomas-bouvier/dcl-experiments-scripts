@@ -12,13 +12,10 @@
     - ansible.posix.synchronize:
         src: "{{ scenario_dir }}/config.yaml"
         dest: "/root/distributed-continual-learning"
-    - debug:
-        msg: "Mounting the storage https://www.grid5000.fr/w/Storage_Manager"
-    - shell: "curl -X POST 'https://api.grid5000.fr/stable/sites/lille/storage/storage1/kerdatalille/access' -H \"Content-Type: application/json\" -d '{\"termination\" : {\"job\": {{ _self.g5k_job_id }}, \"site\": \"lille\"}}' -u 'tbouvier:{{ _self.g5k_pass }}'"
-    - shell: "mount storage1.lille.grid5000.fr:/export/group/kerdatalille /mnt"
-    - debug:
-        msg: "Pulling env"
-    - shell: "git clone https://github.com/thomas-bouvier/spack-envs.git /root/spack-envs || true"
+    #- debug:
+    #    msg: "Mounting the storage https://www.grid5000.fr/w/Storage_Manager"
+    #- shell: "curl -X POST 'https://api.grid5000.fr/stable/sites/lille/storage/storage1/kerdatalille/access' -H \"Content-Type: application/json\" -d '{\"termination\" : {\"job\": {{ _self.g5k_job_id }}, \"site\": \"lille\"}}' -u 'tbouvier:{{ _self.g5k_pass }}'"
+    #- shell: "mount storage1.lille.grid5000.fr:/export/group/kerdatalille /mnt"
     - ansible.posix.synchronize:
         src: "{{ scenario_dir }}/z10_spack_environment.sh"
         dest: "/etc/profile.d"
@@ -34,40 +31,40 @@
     - ansible.posix.synchronize:
         src: "{{ artifacts_dir }}/checkpoint_initial_resnet50_imagenet_{{ current_repeat }}.pth.tar"
         dest: "/root/distributed-continual-learning"
-    - debug:
-        msg: "Copying dataset"
-    - file:
-        path: /tmp/datasets/ImageNet_blurred
-        state: directory
-    - file:
-        path: /dev/shm/datasets/ImageNet_blurred
-        state: directory
-    - ansible.posix.synchronize:
-        src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/train_blurred.tar.gz"
-        dest: "/tmp/datasets/ImageNet_blurred/"
-    - unarchive:
-        src: /tmp/datasets/ImageNet_blurred/train_blurred.tar.gz
-        dest: /dev/shm/datasets/ImageNet_blurred/
-        creates: "/dev/shm/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
-        remote_src: yes
-        group: root
-        owner: root
-    - shell:
-        cmd: "mv /dev/shm/datasets/ImageNet_blurred/train_blurred /dev/shm/datasets/ImageNet_blurred/train"
-        creates: "/dev/shm/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
-    - ansible.posix.synchronize:
-        src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/val_blurred.tar.gz"
-        dest: "/tmp/datasets/ImageNet_blurred/"
-    - unarchive:
-        src: /tmp/datasets/ImageNet_blurred/val_blurred.tar.gz
-        dest: /dev/shm/datasets/ImageNet_blurred/
-        creates: "/dev/shm/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
-        remote_src: yes
-        group: root
-        owner: root
-    - shell:
-        cmd: "mv /dev/shm/datasets/ImageNet_blurred/val_blurred /dev/shm/datasets/ImageNet_blurred/val"
-        creates: "/dev/shm/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
+    #- debug:
+    #    msg: "Copying dataset"
+    #- file:
+    #    path: /tmp/datasets/ImageNet_blurred
+    #    state: directory
+    #- file:
+    #    path: /dev/shm/datasets/ImageNet_blurred
+    #    state: directory
+    #- ansible.posix.synchronize:
+    #    src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/train_blurred.tar.gz"
+    #    dest: "/tmp/datasets/ImageNet_blurred/"
+    #- unarchive:
+    #    src: /tmp/datasets/ImageNet_blurred/train_blurred.tar.gz
+    #    dest: /dev/shm/datasets/ImageNet_blurred/
+    #    creates: "/dev/shm/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
+    #    remote_src: yes
+    #    group: root
+    #    owner: root
+    #- shell:
+    #    cmd: "mv /dev/shm/datasets/ImageNet_blurred/train_blurred /dev/shm/datasets/ImageNet_blurred/train"
+    #    creates: "/dev/shm/datasets/ImageNet_blurred/train/n15075141/n15075141_999.jpg"
+    #- ansible.posix.synchronize:
+    #    src: "{{ artifacts_dir }}/datasets/ImageNet_blurred/val_blurred.tar.gz"
+    #    dest: "/tmp/datasets/ImageNet_blurred/"
+    #- unarchive:
+    #    src: /tmp/datasets/ImageNet_blurred/val_blurred.tar.gz
+    #    dest: /dev/shm/datasets/ImageNet_blurred/
+    #    creates: "/dev/shm/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
+    #    remote_src: yes
+    #    group: root
+    #    owner: root
+    #- shell:
+    #    cmd: "mv /dev/shm/datasets/ImageNet_blurred/val_blurred /dev/shm/datasets/ImageNet_blurred/val"
+    #    creates: "/dev/shm/datasets/ImageNet_blurred/val/n15075141/ILSVRC2012_val_00049174.jpg"
 
 # Horovod master
 - hosts: cloud.horovod.1.1
@@ -78,7 +75,7 @@
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/mnt/view/chifflot-v100/lib:/mnt/view/chifflot-v100/lib64:/mnt/view/chifflot-v100/lib/python3.10/site-packages/torch/lib horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100/lib:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100/lib64:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-v100/lib/python3.10/site-packages/torch/lib horovodrun -np 4 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"
