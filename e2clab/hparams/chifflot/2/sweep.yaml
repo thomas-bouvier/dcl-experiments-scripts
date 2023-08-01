@@ -1,0 +1,23 @@
+method: random
+metric:
+  name: continual_val_prec1
+  goal: maximize
+parameters:
+  epochs:
+    min: 5
+    max: 40
+  lr:
+    min: 0.0001
+    max: 0.5
+  alpha:
+    min: 0.1
+    max: 0.9
+  beta:
+    min: 0.1
+    max: 0.9
+  batch-size:
+    values: [16, 32, 64, 128]
+command:
+  - python
+  - main.py
+  - ${args}
