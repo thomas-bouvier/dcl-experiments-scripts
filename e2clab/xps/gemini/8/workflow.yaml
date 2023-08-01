@@ -69,14 +69,10 @@
 
 # Horovod master
 - hosts: cloud.horovod.1.1
-  depends_on:
-    - service_selector: "cloud.horovod.*"
-      grouping: "aggregate"
-      prefix: "horovod"
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini/lib:/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini/lib64:/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini/lib/python3.10/site-packages/torch/lib horovodrun -np 8 -H {{ horovod1_1.url }}:8 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini/lib:/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini/lib64:/srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/view/gemini/lib/python3.10/site-packages/torch/lib horovodrun -np 8 -H {{ _self.horovod1 }}:8 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"

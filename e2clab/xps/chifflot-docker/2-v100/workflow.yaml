@@ -64,17 +64,13 @@
 
 # Horovod master
 - hosts: cloud.horovod.1.1
-  depends_on:
-    - service_selector: "cloud.horovod.*"
-      grouping: "aggregate"
-      prefix: "horovod"
   launch:
     #- shell: "docker exec -w /experiments -d {{ _self.container_name }} tensorboard --logdir results"
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
     # https://horovod.readthedocs.io/en/stable/timeline_include.html
     # https://github.com/horovod/horovod/issues/1373
-    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && LD_LIBRARY_PATH=/opt/view/lib:/opt/view/lib64:/opt/view/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ horovod1_1.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir .'"
+    - shell: "docker exec -w /experiments {{ _self.container_name }} bash -c '. /etc/profile && LD_LIBRARY_PATH=/opt/view/lib:/opt/view/lib64:/opt/view/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ _self.horovod1 }}:2 -p 12345 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir .'"
     #- shell: "docker exec -w /experiments {{ _self.container_name }} nsys profile --trace=cuda,nvtx -o profile bash -c '. /etc/profile && LD_LIBRARY_PATH=/opt/view/lib:/opt/view/lib64:/opt/view/lib/python3.10/site-packages/torch/lib horovodrun -np 8 -H {{ horovod1_1.url }}:2,{{ horovod1_2.url }}:2,{{ horovod1_3.url }}:2,{{ horovod1_4.url }}:2 -p 12345 --output-filename /tmp/horovodrun/logs --timeline-filename /tmp/horovodrun/timeline.json python main.py --config {{ app_conf }} --save-dir .'"
   finalize:
     - debug:

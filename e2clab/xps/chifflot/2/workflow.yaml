@@ -69,14 +69,10 @@
 
 # Horovod master
 - hosts: cloud.horovod.1.1
-  depends_on:
-    - service_selector: "cloud.horovod.*"
-      grouping: "aggregate"
-      prefix: "horovod"
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib64:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ horovod1_1.url }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib64:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ _self.horovod1 }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"
