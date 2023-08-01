@@ -1,10 +1,10 @@
 ---
 environment:
-  name: g5k
-  cluster: chetemi
-  env_name: https://api.grid5000.fr/sid/sites/lille/public/tbouvier/debian11-x64-big-cuda-3.yaml
   job_name: dcl-experiments-lille-p100
   walltime: "01:00:00"
+g5k:
+  cluster: chetemi
+  env_name: https://api.grid5000.fr/sid/sites/lille/public/tbouvier/debian11-x64-big-cuda-3.yaml
 #monitoring:
 #  type: tig
 #  network: shared
