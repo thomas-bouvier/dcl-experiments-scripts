@@ -33,8 +33,7 @@ Place the following datasets in `/srv/storage/kerdatadatasets@storage1.lyon.grid
 Simlink the Group Storage `datasets` folder to `artifacts/datasets`:
 
 ```console
-cd dcl-experiments-e2clab
-ln -s /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets/ artifacts/datasets
+ln -s /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets/ /home/tbouvier/src/dcl-experiments-scripts/artifacts/datasets
 ```
 
 ### Deployment
@@ -42,15 +41,18 @@ ln -s /srv/storage/kerdatadatasets@storage1.lyon.grid5000.fr/datasets/ artifacts
 The E2Clab docs can be found here https://e2clab.gitlabpages.inria.fr/e2clab/index.html.
 
 ```console
-cd e2clab
+git clone https://gitlab.inria.fr/E2Clab/e2clab.git ~/e2clab
+cd ~/e2clab
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -U -e .
 
-e2clab deploy src/dcl-experiments-scripts/e2clab/gemini/8 --app_conf=base src/dcl-experiments-scripts/artifacts/
+nano ~/e2clab/services/Horovod.py # Copy the Horovod service as explained below
+
+e2clab deploy src/dcl-experiments-scripts/xps/e2clab/gemini/8 --app_conf=base src/dcl-experiments-scripts/artifacts/
 ```
 
-Don't forget to install the `Horovod` service for E2Clab using [User-Defined-Services](https://gitlab.inria.fr/E2Clab/user-defined-services).
+Don't forget to install the `Horovod.py` service for E2Clab using [User-Defined-Services](https://gitlab.inria.fr/E2Clab/user-defined-services).
 
 <!--
 ### Bare-metal
@@ -62,7 +64,6 @@ In the `layers_services.yaml` of the experiment to run, fill the required attrib
 - `g5k_job_id: <id>`
 
 The `g5k_pass` and `g5k_job_id` are needed to mount a group storage from a deployed node. The group storage should contain a Spack installation.
--->
 
 ### Deployment with Docker (not advised)
 
@@ -81,6 +82,7 @@ An image containing Horovod + PyTorch is required to deploy the application. If 
 cd dcl-experiments-scripts
 find . \( -type d -name .git -prune \) -o -type f -name "layers_services.yaml" -print0 | xargs -0 sed -i 's/registry_password: ""/registry_password: "<token>"/g'
 ```
+-->
 
 ### Monitoring
 
