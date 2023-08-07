@@ -1,6 +1,6 @@
 ---
 environment:
-  job_name: horovod-pytorch-lyon
+  job_name: dcl-experiments-lyon
   job_type: ["exotic", "deploy"]
   walltime: "01:00:00"
   g5k:
