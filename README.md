@@ -4,7 +4,11 @@
 
 ### Installation
 
+Once Spack dependencies have been installed, create a symlink on the compute node as follows to take advantage of them in further deployments:
 
+```console
+ln -s /srv/storage/kerdatalille@storage1.lille.grid5000.fr/ /mnt
+```
 
 ### Artifacts
 
@@ -123,5 +127,9 @@ ssh -NL 6006:127.0.0.1:6006 chifflot-2.lille.grid5000.fr
 Open `localhost:6006` in your browser.
 
 ## ThetaGPU
+
+```
+rsync -rzv --copy-dirlinks -e ssh /home/tbouvier/Dev/dcl-experiments-scripts/cobalt/thetagpu/ tbouvier@theta.alcf.anl.gov:/home/tbouvier/distributed-continual-learning/xps/thetagpu
+```
 
 Read the ALCF guide [here](https://docs.alcf.anl.gov/theta-gpu/queueing-and-running-jobs/job-and-queue-scheduling/).
