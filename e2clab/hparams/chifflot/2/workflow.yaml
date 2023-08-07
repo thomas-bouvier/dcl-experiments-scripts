@@ -14,9 +14,9 @@
         dest: "/root/distributed-continual-learning"
     - debug:
         msg: "Mounting the storage https://www.grid5000.fr/w/Storage_Manager"
-    - shell: ln -s /srv/storage/kerdatalille@storage1.lille.grid5000.fr/ /mnt
+    - shell: ln -s /srv/storage/kerdatalille@storage1.lille.grid5000.fr/ /my-spack
     #- shell: "curl -X POST 'https://api.grid5000.fr/stable/sites/lille/storage/storage1/kerdatalille/access' -H \"Content-Type: application/json\" -d '{\"termination\" : {\"job\": {{ _self.g5k_job_id }}, \"site\": \"lille\"}}' -u 'tbouvier:{{ _self.g5k_pass }}'"
-    #- shell: "mount storage1.lille.grid5000.fr:/export/group/kerdatalille /mnt"
+    #- shell: "mount storage1.lille.grid5000.fr:/export/group/kerdatalille /my-spack"
     - ansible.posix.synchronize:
         src: "{{ scenario_dir }}/z10_spack_environment.sh"
         dest: "/etc/profile.d"

@@ -7,7 +7,7 @@
 Once Spack dependencies have been installed, create a symlink on the compute node as follows to take advantage of them in further deployments:
 
 ```console
-ln -s /srv/storage/kerdatalille@storage1.lille.grid5000.fr/ /mnt
+ln -s /srv/storage/kerdatalille@storage1.lille.grid5000.fr/ /my-spack
 ```
 
 ### Artifacts
