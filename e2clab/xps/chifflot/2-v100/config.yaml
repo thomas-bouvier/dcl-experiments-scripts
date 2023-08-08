@@ -1,218 +1,349 @@
 base:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir:
   tasksets_config:
   shard:
-  agent:
-  agent_config:
-  model: resnet50
-  model_config:
+  model:
+  buffer_config:
+  backbone: resnet50
+  backbone_config:
   checkpoint:
-  batch_size: 128
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers: 2
   epochs: 90
+  warmup_epochs: 10
   lr: 0.0125
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
-  buffer_cuda: False
-  use_dali: True
-  use_amp: True
+  use_dali: False
+  use_amp: False
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
 
-
-baseline_naive:
+baseline_naive_resnet:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
-  agent:
-  agent_config:
-  model: resnet50
-  model_config:
-  batch_size: 128
+  model:
+  buffer_config:
+  backbone: resnet50
+  backbone_config:
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 50
+  epochs: 25
+  warmup_epochs: 5
   lr: 0.0125
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
   use_dali: True
   use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
 
+baseline_naive_efficientnetv2:
+  dataset: imagenet_blurred
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model:
+  buffer_config:
+  backbone: efficientnetv2
+  backbone_config: "{'lr_min': 1e-6}"
+  batch_size: 64
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 25
+  warmup_epochs: 5
+  lr: 0.00075
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
 
 baseline_scratch:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
-  agent:
-  agent_config: "{'reset_state_dict': True}"
-  model: resnet50
-  model_config:
-  batch_size: 128
+  model: Vanilla
+  model_config: "{'reset_state_dict': True}"
+  buffer_config:
+  backbone: resnet50
+  backbone_config:
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 50
+  epochs: 25
+  warmup_epochs: 5
   lr: 0.0125
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
   use_dali: True
   use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
-
 
 baseline_transfer:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
-  agent:
-  agent_config:
-  model: resnet50
-  model_config:
-  batch_size: 128
+  model: Vanilla
+  buffer_config:
+  backbone: resnet50
+  backbone_config:
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 50
+  epochs: 25
+  warmup_epochs: 5
   lr: 0.0125
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
   use_dali: True
   use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
 
-
-nil:
+er_resnet:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
-  agent: nil
-  agent_config: "{'num_representatives': 26, 'buffer_cuda': False}"
-  model: resnet50
-  model_config:
-  batch_size: 128
+  model: Er
+  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 1, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 50
+  epochs: 25
+  warmup_epochs: 5
   lr: 0.0125
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
   use_dali: True
   use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
 
-
-nil_cpp:
+er_flyweight_resnet:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
-  agent: nil
-  agent_config: "{'implementation': 'cpp', 'num_representatives': 26, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
-  model: resnet50
-  model_config:
-  batch_size: 128
+  model: Er
+  buffer_config: "{'implementation': 'flyweight', 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 50
+  epochs: 25
+  warmup_epochs: 5
   lr: 0.0125
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
   use_dali: True
   use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
 
-
-nil_local:
+er_efficientnetv2:
   dataset: imagenet_blurred
-  dataset_dir: /dev/shm/datasets
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
-  agent: nil
-  agent_config: "{'implementation': 'local', 'num_representatives': 26, 'buffer_cuda': False}"
-  model: resnet50
-  model_config:
-  batch_size: 128
+  model: Er
+  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 20, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: efficientnetv2
+  backbone_config: "{'lr_min': 1e-6}"
+  batch_size: 64
   eval_batch_size:
   batches_per_allreduce:
   dataloader_workers:
-  epochs: 50
-  lr: 0.0125
+  epochs: 25
+  warmup_epochs: 5
+  lr: 0.002
   momentum:
-  optimizer:
+  optimizer_regime:
   no_cuda:
   use_dali: True
   use_amp: True
   seed:
   log_interval:
   fp16_allreduce:
-  use_adasum:
   gradient_predivide_factor:
   weight_decay:
   results_dir:
   save_dir:
-  tensorboard:
 
+er_flyweight_efficientnetv2:
+  dataset: imagenet_blurred
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  buffer_config: "{'implementation': 'flyweight', 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: efficientnetv2
+  backbone_config: "{'lr_min': 1e-6}"
+  batch_size: 64
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 25
+  warmup_epochs: 5
+  lr: 0.256
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+
+er_convnext:
+  dataset: imagenet_blurred
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: convnext
+  backbone_config: "{'lr_min': 1e-6}"
+  batch_size: 64
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 25
+  warmup_epochs: 5
+  lr: 4e-3
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+
+er_flyweight_convnext:
+  dataset: imagenet_blurred
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  buffer_config: "{'implementation': 'flyweight', 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: convnext
+  backbone_config: "{'lr_min': 1e-6}"
+  batch_size: 64
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 25
+  warmup_epochs: 5
+  lr: 4e-3
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+
+ptycho:
+  dataset: ptycho
+  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  buffer_config: "{'implementation': 'flyweight', 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 8, 'provider': 'na+sm', 'discover_endpoints': True, 'cuda_rdma': False}"
+  backbone: ptychonn
+  backbone_config: "{'lr_min': 1e-6}"
+  batch_size: 64
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 25
+  warmup_epochs: 5
+  lr: 4e-3
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:

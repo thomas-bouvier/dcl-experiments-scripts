@@ -26,7 +26,7 @@
         dest: "/etc/profile.d"
     - debug:
         msg: "Compiling C++ component (if this is failing, just skip it)"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning/cpp_loader || true && cmake . -DWITHOUT_CUDA=0 -D MKL_LIBRARIES=/mnt/view/chifflot-p100/lib/intel64 -D CAFFE2_USE_CUDNN=1 || true"
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning/cpp_loader || true && cmake . -DWITHOUT_CUDA=0 -D MKL_LIBRARIES=/my-spack/view/chifflot-p100/lib/intel64 -D CAFFE2_USE_CUDNN=1 || true"
     - shell: ". /etc/profile && cd /root/distributed-continual-learning/cpp_loader || true && make || true"
     - shell: "cp /root/distributed-continual-learning/cpp_loader/src/neomem*.so /root/distributed-continual-learning || true"
     - shell: "cp /root/distributed-continual-learning/cpp_loader/src/neomem*.so /root/distributed-continual-learning/cpp_loader/examples || true"
@@ -76,7 +76,7 @@
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib64:/srv/storage/kerdatalille@storage1.lille.grid5000.fr/view/chifflot-p100/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ _self.horovod1 }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/my-spack/view/chifflot-p100/lib:/my-spack/view/chifflot-p100/lib64:/my-spack/view/chifflot-p100/lib/python3.10/site-packages/torch/lib horovodrun -np 2 -H {{ _self.horovod1 }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"
