@@ -1,7 +1,7 @@
 #!/bin/zsh
 #COBALT -A VeloC
 #COBALT -n 4
-#COBALT -t 1:30:00
+#COBALT -t 0:40:00
 #COBALT --mode script
 #COBALT -q full-node
 #COBALT --attr filesystems=home
