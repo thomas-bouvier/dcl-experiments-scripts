@@ -30,7 +30,7 @@ base:
 
 baseline_naive_resnet:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model:
@@ -59,7 +59,7 @@ baseline_naive_resnet:
 
 baseline_naive_efficientnetv2:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model:
@@ -88,7 +88,7 @@ baseline_naive_efficientnetv2:
 
 baseline_scratch:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   model: Vanilla
@@ -118,7 +118,7 @@ baseline_scratch:
 
 baseline_transfer:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   model: Vanilla
@@ -147,7 +147,7 @@ baseline_transfer:
 
 er_resnet:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -176,7 +176,7 @@ er_resnet:
 
 er_flyweight_resnet:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -205,7 +205,7 @@ er_flyweight_resnet:
 
 er_efficientnetv2:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -234,7 +234,7 @@ er_efficientnetv2:
 
 er_flyweight_efficientnetv2:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -263,7 +263,7 @@ er_flyweight_efficientnetv2:
 
 er_convnext:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -292,7 +292,7 @@ er_convnext:
 
 er_flyweight_convnext:
   dataset: imagenet_blurred
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -321,7 +321,7 @@ er_flyweight_convnext:
 
 ptycho:
   dataset: ptycho
-  dataset_dir: /mnt/datasets #/dev/shm/datasets
+  dataset_dir: /my-spack/datasets #/dev/shm/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
