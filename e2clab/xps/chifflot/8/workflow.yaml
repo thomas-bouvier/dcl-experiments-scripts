@@ -12,9 +12,9 @@
     - ansible.posix.synchronize:
         src: "{{ scenario_dir }}/config.yaml"
         dest: "/root/distributed-continual-learning"
-    - debug:
-        msg: "Mounting the storage https://www.grid5000.fr/w/Storage_Manager"
     - shell: rm -f /my-spack && ln -s /srv/storage/kerdatalille@storage1.lille.grid5000.fr/ /my-spack
+    #- debug:
+    #    msg: "Mounting the storage https://www.grid5000.fr/w/Storage_Manager"
     #- shell: "curl -X POST 'https://api.grid5000.fr/stable/sites/lille/storage/storage1/kerdatalille/access' -H \"Content-Type: application/json\" -d '{\"termination\" : {\"job\": {{ _self.g5k_job_id }}, \"site\": \"lille\"}}' -u 'tbouvier:{{ _self.g5k_pass }}'"
     #- shell: "mount storage1.lille.grid5000.fr:/export/group/kerdatalille /my-spack"
     - shell: "rm -f /etc/profile.d/guix.sh"
@@ -76,7 +76,7 @@
   launch:
     - debug:
         msg: "Running {{ scenario_dir }}, config: {{ app_conf }}"
-    - shell: ". /etc/profile && cd /root/distributed-continual-learning && LD_LIBRARY_PATH=/my-spack/view/chifflot-p100/lib:/my-spack/view/chifflot-p100/lib64:/my-spack/view/chifflot-p100/lib/python3.10/site-packages/torch/lib horovodrun -np 8 -H {{ _self.horovod1 }}:2,{{ _self.horovod2 }}:2,{{ _self.horovod3 }}:2,{{ _self.horovod4 }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
+    - shell: ". /etc/profile && cd /root/distributed-continual-learning && horovodrun -np 8 -H {{ _self.horovod1 }}:2,{{ _self.horovod2 }}:2,{{ _self.horovod3 }}:2,{{ _self.horovod4 }}:2 --output-filename /tmp/horovodrun/logs python main.py --config {{ app_conf }} --save-dir ."
   finalize:
     - debug:
         msg: "Copying logs to host"
