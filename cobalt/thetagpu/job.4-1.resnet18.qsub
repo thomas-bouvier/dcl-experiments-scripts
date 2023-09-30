@@ -1,7 +1,7 @@
 #!/bin/zsh
 #COBALT -A VeloC
-#COBALT -n 8
-#COBALT -t 0:35:00
+#COBALT -n 2
+#COBALT -t 1:15:00
 #COBALT --mode script
 #COBALT -q full-node
 #COBALT --attr filesystems=home
@@ -24,4 +24,4 @@ export WANDB_MODE=offline
 export LD_LIBRARY_PATH="/home/tbouvier/view/thetagpu/lib;/home/tbouvier/view/thetagpu/lib64;/home/tbouvier/view/thetagpu/lib/python3.10/site-packages/torch/lib;/lus/theta-fs0/software/thetagpu/openmpi/openmpi-4.1.4_ucx-1.14.0_gcc-9.4.0_cuda-11.4/lib;/usr/local/cuda-11/lib64"
 
 # Jobs are run from the xps/thetagpu dir, main.py is at location ../..
-mpiexec -np 64 -npernode 8 -hostfile $COBALT_NODEFILE -bind-to none -map-by slot -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x WANDB_MODE -x PATH python ../../main.py --yaml-config experiments_thetagpu.yaml --config er_ghostnet_scale --log-level info
+mpiexec -np 16 -npernode 8 -hostfile $COBALT_NODEFILE -bind-to none -map-by slot -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x WANDB_MODE -x PATH python ../../main.py --yaml-config experiments_thetagpu.yaml --config er_resnet18_scale --log-level info

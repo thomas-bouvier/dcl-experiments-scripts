@@ -423,6 +423,70 @@ baseline_naive_resnet_scale:
   save_dir:
   load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
 
+baseline_naive_resnet18_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /home/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model:
+  model_config:
+  buffer_config:
+  backbone: resnet18
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet18_imagenet_1.pth.tar
+
+baseline_naive_ghostnet_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /home/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model:
+  model_config:
+  buffer_config:
+  backbone: ghostnet
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.01
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ghostnet_imagenet_1.pth.tar
+
 baseline_scratch_resnet_scale:
   dataset: imagenet_blurred
   dataset_dir: /home/tbouvier/datasets
@@ -454,6 +518,70 @@ baseline_scratch_resnet_scale:
   results_dir:
   save_dir:
   load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+baseline_scratch_resnet18_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /home/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
+  shard:
+  model:
+  model_config: "{'reset_state_dict': True}"
+  buffer_config:
+  backbone: resnet18
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet18_imagenet_1.pth.tar
+
+baseline_scratch_ghostnet_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /home/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
+  shard:
+  model:
+  model_config: "{'reset_state_dict': True}"
+  buffer_config:
+  backbone: ghostnet
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.01
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ghostnet_imagenet_1.pth.tar
 
 er_resnet_scale:
   dataset: imagenet_blurred
@@ -488,6 +616,72 @@ er_resnet_scale:
   training_only:
   load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
 
+er_resnet18_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /home/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet18
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  training_only:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet18_imagenet_1.pth.tar
+
+er_ghostnet_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /home/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: ghostnet
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.01
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  training_only:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ghostnet_imagenet_1.pth.tar
+
 er_mobilenetv3_scale:
   dataset: imagenet_blurred
   dataset_dir: /home/tbouvier/datasets
@@ -516,6 +710,8 @@ er_mobilenetv3_scale:
   weight_decay:
   results_dir:
   save_dir:
+  training_only:
+  load_checkpoint:
 
 er_efficientnetv2_scale:
   dataset: imagenet_blurred
