@@ -19,5 +19,5 @@ parameters:
     values: [16, 32, 64, 128]
 command:
   - python
-  - main.py
+  - sweep.py
   - ${args}
