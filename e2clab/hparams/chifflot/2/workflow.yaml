@@ -36,9 +36,9 @@
     - shell: "cp /root/distributed-continual-learning/cpp_loader/src/neomem_example /root/distributed-continual-learning/cpp_loader/examples || true"
     - debug:
         msg: "Copying the model checkpoint"
-    #- ansible.posix.synchronize:
-    #    src: "{{ artifacts_dir }}/checkpoint_initial_resnet50_imagenet_{{ current_repeat }}.pth.tar"
-    #    dest: "/root/distributed-continual-learning"
+    - ansible.posix.synchronize:
+        src: "{{ artifacts_dir }}/checkpoint_initial_resnet50_imagenet_{{ current_repeat }}.pth.tar"
+        dest: "/root/distributed-continual-learning"
     #- debug:
     #    msg: "Copying dataset"
     #- file:
