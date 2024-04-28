@@ -2,7 +2,7 @@
 #PBS -A VeloC
 #PBS -l select=4
 #PBS -l walltime=1:15:00
-#PBS -q prod
+#PBS -q preemptable
 #PBS -l filesystems=home
 #PBS -M thomas.bouvier@inria.fr
 
