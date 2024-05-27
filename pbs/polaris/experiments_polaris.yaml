@@ -1,267 +1,6 @@
-er_resnet_B_5:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 5, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-er_resnet_B_10:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 10, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-er_resnet_B_20:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 20, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-er_resnet_B_30:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-
-
-
-
-er_resnet_r_7:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-er_resnet_r_14:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 14, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-er_resnet_r_28:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 28, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-er_resnet_r_56:
-  dataset: imagenet_blurred
-  dataset_dir: /grand/VeloC/tbouvier/datasets
-  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
-  shard:
-  model: Er
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 56, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
-  backbone: resnet50
-  backbone_config:
-  batch_size: 56
-  eval_batch_size:
-  batches_per_allreduce:
-  dataloader_workers:
-  epochs: 30
-  warmup_epochs: 5
-  lr: 0.0125
-  momentum:
-  optimizer_regime:
-  no_cuda:
-  use_dali: True
-  use_amp: True
-  seed:
-  log_interval:
-  fp16_allreduce:
-  use_adasum:
-  gradient_predivide_factor:
-  weight_decay:
-  results_dir:
-  save_dir:
-  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
-
-
-
-
-
+##########################################################################
+# BASELINES
+##########################################################################
 
 baseline_naive_resnet_scale:
   dataset: imagenet_blurred
@@ -455,6 +194,266 @@ baseline_scratch_ghostnet_scale:
   save_dir:
   load_checkpoint: /home/tbouvier/checkpoint_initial_ghostnet_imagenet_1.pth.tar
 
+##########################################################################
+# EXPERIENCE REPLAY
+##########################################################################
+
+er_resnet_B_5:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 5, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_B_10:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 10, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_B_20:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 20, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_B_30:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_r_7:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_r_14:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 14, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_r_28:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 28, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+er_resnet_r_56:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Er
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 56, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
 er_resnet_scale:
   dataset: imagenet_blurred
   dataset_dir: /grand/VeloC/tbouvier/datasets
@@ -462,7 +461,7 @@ er_resnet_scale:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 56
@@ -495,7 +494,7 @@ er_resnet18_scale:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet18
   backbone_config:
   batch_size: 56
@@ -528,7 +527,7 @@ er_ghostnet_scale:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: ghostnet
   backbone_config:
   batch_size: 56
@@ -560,7 +559,7 @@ er_mobilenetv3_scale:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 16, 'num_representatives': 8, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 16, 'num_representatives': 8, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: mobilenetv3
   backbone_config:
   batch_size: 64
@@ -592,7 +591,7 @@ er_efficientnetv2_scale:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 16, 'num_representatives': 8, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 16, 'num_representatives': 8, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: efficientnetv2
   backbone_config: "{'lr_min': 1e-6}"
   batch_size: 64
@@ -625,7 +624,7 @@ er_convnext_scale:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 30, 'num_candidates': 16, 'num_representatives': 8, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 16, 'num_representatives': 8, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: convnext
   backbone_config: "{'lr_min': 1e-6}"
   batch_size: 64
@@ -650,9 +649,6 @@ er_convnext_scale:
   training_only:
   load_checkpoint:
 
-
-
-
 er_resnet_c_8:
   dataset: imagenet_blurred
   dataset_dir: /grand/VeloC/tbouvier/datasets
@@ -660,7 +656,7 @@ er_resnet_c_8:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 20, 'num_candidates': 8, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 20, 'num_candidates': 8, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 64
@@ -692,7 +688,7 @@ er_resnet_c_16:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 20, 'num_candidates': 16, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 20, 'num_candidates': 16, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 64
@@ -724,7 +720,7 @@ er_resnet_c_32:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 20, 'num_candidates': 32, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 20, 'num_candidates': 32, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 64
@@ -756,7 +752,7 @@ er_resnet_c_64:
   shard:
   model: Er
   model_config:
-  buffer_config: "{'implementation': 'standard', 'rehearsal_ratio': 20, 'num_candidates': 64, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 20, 'num_candidates': 64, 'num_representatives': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 64
@@ -780,3 +776,221 @@ er_resnet_c_64:
   results_dir:
   save_dir:
   load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+##########################################################################
+# KNOWLEDGE DISTILLATION
+##########################################################################
+
+der_resnet_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Der
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  training_only:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+##########################################################################
+# EXPERIENCE REPLAY + KNOWLEDGE DISTILLATION
+##########################################################################
+
+derpp_resnet_scale:
+  dataset: imagenet_blurred
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
+  shard:
+  model: Derpp
+  model_config:
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: resnet50
+  backbone_config:
+  batch_size: 56
+  eval_batch_size:
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 30
+  warmup_epochs: 5
+  lr: 0.0125
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  training_only:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_resnet50_imagenet_1.pth.tar
+
+##########################################################################
+# PTYCHO BASELINE
+##########################################################################
+
+baseline_naive_ptychonn_scale:
+  dataset: ptycho
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'reconstruction', 'num_tasks': 156}"
+  shard:
+  model:
+  model_config:
+  buffer_config:
+  backbone: ptychonn
+  backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
+  batch_size: 16
+  eval_batch_size: 5
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 1
+  warmup_epochs: 5
+  lr: 0.00088
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ptychonn_1.pth.tar
+
+##########################################################################
+# PTYCHO EXPERIENCE REPLAY
+##########################################################################
+
+er_ptychonn_scale:
+  dataset: ptycho
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'reconstruction', 'num_tasks': 156}"
+  shard:
+  model: Er
+  model_config: "{'alpha': 0.8, 'beta': 1}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: ptychonn
+  backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
+  batch_size: 16
+  eval_batch_size: 5
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 1
+  warmup_epochs: 5
+  lr: 0.00088
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ptychonn_1.pth.tar
+
+##########################################################################
+# PTYCHO KNOWLEDGE DISTILLATION
+##########################################################################
+
+der_ptychonn_scale:
+  dataset: ptycho
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'reconstruction', 'num_tasks': 156}"
+  shard:
+  model: Der
+  model_config: "{'alpha': 0.8, 'beta': 1}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: ptychonn
+  backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
+  batch_size: 16
+  eval_batch_size: 5
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 1
+  warmup_epochs: 5
+  lr: 0.00088
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ptychonn_1.pth.tar
+
+##########################################################################
+# PTYCHO EXPERIENCE REPLAY + KNOWLEDGE DISTILLATION
+##########################################################################
+
+derpp_ptychonn_scale:
+  dataset: ptycho
+  dataset_dir: /grand/VeloC/tbouvier/datasets
+  tasksets_config: "{'scenario': 'reconstruction', 'num_tasks': 156}"
+  shard:
+  model: Derpp
+  model_config: "{'alpha': 0.8, 'beta': 1}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  backbone: ptychonn
+  backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
+  batch_size: 16
+  eval_batch_size: 5
+  batches_per_allreduce:
+  dataloader_workers:
+  epochs: 1
+  warmup_epochs: 5
+  lr: 0.00088
+  momentum:
+  optimizer_regime:
+  no_cuda:
+  use_dali: True
+  use_amp: True
+  seed:
+  log_interval:
+  fp16_allreduce:
+  use_adasum:
+  gradient_predivide_factor:
+  weight_decay:
+  results_dir:
+  save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ptychonn_1.pth.tar
