@@ -347,3 +347,4 @@ ptycho:
   weight_decay:
   results_dir:
   save_dir:
+  load_checkpoint: /home/tbouvier/checkpoint_initial_ptychonn_1.pth.tar

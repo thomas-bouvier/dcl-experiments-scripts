@@ -34,7 +34,7 @@
     - debug:
         msg: "Copying the model checkpoint"
     - ansible.posix.synchronize:
-        src: "{{ artifacts_dir }}/checkpoint_initial_resnet50_imagenet_{{ current_repeat }}.pth.tar"
+        src: "{{ artifacts_dir }}/checkpoint_initial_ptychonn_{{ current_repeat }}.pth.tar"
         dest: "/root/distributed-continual-learning"
     #- debug:
     #    msg: "Copying dataset"

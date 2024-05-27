@@ -1,6 +1,6 @@
 er_resnet_B_5:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -32,7 +32,7 @@ er_resnet_B_5:
 
 er_resnet_B_10:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -64,7 +64,7 @@ er_resnet_B_10:
 
 er_resnet_B_20:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -96,7 +96,7 @@ er_resnet_B_20:
 
 er_resnet_B_30:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -132,7 +132,7 @@ er_resnet_B_30:
 
 er_resnet_r_7:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -164,7 +164,7 @@ er_resnet_r_7:
 
 er_resnet_r_14:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -196,7 +196,7 @@ er_resnet_r_14:
 
 er_resnet_r_28:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -228,7 +228,7 @@ er_resnet_r_28:
 
 er_resnet_r_56:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -265,7 +265,7 @@ er_resnet_r_56:
 
 baseline_naive_resnet_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model:
@@ -297,7 +297,7 @@ baseline_naive_resnet_scale:
 
 baseline_naive_resnet18_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model:
@@ -329,7 +329,7 @@ baseline_naive_resnet18_scale:
 
 baseline_naive_ghostnet_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model:
@@ -361,7 +361,7 @@ baseline_naive_ghostnet_scale:
 
 baseline_scratch_resnet_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   model:
@@ -393,7 +393,7 @@ baseline_scratch_resnet_scale:
 
 baseline_scratch_resnet18_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   model:
@@ -425,7 +425,7 @@ baseline_scratch_resnet18_scale:
 
 baseline_scratch_ghostnet_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250, 'concatenate_tasksets': True}"
   shard:
   model:
@@ -457,7 +457,7 @@ baseline_scratch_ghostnet_scale:
 
 er_resnet_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -490,7 +490,7 @@ er_resnet_scale:
 
 er_resnet18_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -523,7 +523,7 @@ er_resnet18_scale:
 
 er_ghostnet_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -556,7 +556,7 @@ er_ghostnet_scale:
 
 er_mobilenetv3_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -587,7 +587,7 @@ er_mobilenetv3_scale:
 
 er_efficientnetv2_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -620,7 +620,7 @@ er_efficientnetv2_scale:
 
 er_convnext_scale:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -655,7 +655,7 @@ er_convnext_scale:
 
 er_resnet_c_8:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -687,7 +687,7 @@ er_resnet_c_8:
 
 er_resnet_c_16:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -719,7 +719,7 @@ er_resnet_c_16:
 
 er_resnet_c_32:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
@@ -751,7 +751,7 @@ er_resnet_c_32:
 
 er_resnet_c_64:
   dataset: imagenet_blurred
-  dataset_dir: /home/tbouvier/datasets
+  dataset_dir: /grand/VeloC/tbouvier/datasets
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Er
