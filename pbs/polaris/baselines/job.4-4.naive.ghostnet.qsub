@@ -4,7 +4,7 @@
 #PBS -l walltime=0:45:00
 #PBS -q prod
 #PBS -l filesystems=home
-#PBS -M thomas.bouvier@inria.fr
+#PBS -M contact@thomas-bouvier.io
 
 set -eu
 
