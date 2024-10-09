@@ -824,7 +824,7 @@ derpp_resnet_scale:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Derpp
-  model_config:
+  model_config: "{'alpha': 0.8, 'beta': 1}"
   buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
