@@ -787,8 +787,8 @@ der_resnet_scale:
   tasksets_config: "{'scenario': 'class', 'initial_increment': 250, 'increment': 250}"
   shard:
   model: Der
-  model_config:
-  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  model_config: "{'alpha': 0.8}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 56
@@ -825,7 +825,7 @@ derpp_resnet_scale:
   shard:
   model: Derpp
   model_config: "{'alpha': 0.8, 'beta': 1}"
-  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 1, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 14, 'num_representatives': 7, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: resnet50
   backbone_config:
   batch_size: 56
@@ -898,7 +898,7 @@ er_ptychonn_scale:
   shard:
   model: Er
   model_config: "{'alpha': 0.8, 'beta': 1}"
-  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 2, 'activation_shape': [1, 256, 256], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: ptychonn
   backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
   batch_size: 16
@@ -933,8 +933,8 @@ der_ptychonn_scale:
   tasksets_config: "{'scenario': 'reconstruction', 'num_tasks': 156}"
   shard:
   model: Der
-  model_config: "{'alpha': 0.8, 'beta': 1}"
-  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  model_config: "{'alpha': 0.8}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 2, 'activation_shape': [1, 256, 256], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: ptychonn
   backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
   batch_size: 16
@@ -970,7 +970,7 @@ derpp_ptychonn_scale:
   shard:
   model: Derpp
   model_config: "{'alpha': 0.8, 'beta': 1}"
-  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 1, 'activation_shape': [1000], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
+  buffer_config: "{'implementation': 'standard', 'num_samples_per_representative': 3, 'num_samples_per_activation': 2, 'activation_shape': [1, 256, 256], 'rehearsal_ratio': 30, 'num_candidates': 8, 'num_representatives': 24, 'augmentations_offset': 16, 'provider': 'verbs', 'discover_endpoints': True, 'cuda_rdma': True}"
   backbone: ptychonn
   backbone_config: "{'lr_schedule': 'exp_range_cyclic_lr', 'step_cycle_size': 2944, 'weight_decay': 0}"
   batch_size: 16
