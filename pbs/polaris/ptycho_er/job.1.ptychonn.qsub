@@ -35,4 +35,4 @@ echo "NUM_OF_NODES=${NNODES} TOTAL_NUM_RANKS=${NTOTRANKS} RANKS_PER_NODE=${NRANK
 # execution streams.  The default CPU binding on Polaris will limit each
 # process launched with mpiexec to a single CPU core that will starve any
 # additional threads.
-mpiexec -n ${NTOTRANKS} --ppn ${NRANKS_PER_NODE} --cpu-bind none ./set_affinity_gpu_polaris.sh python ${HOME}/distributed-continual-learning/main.py --yaml-config ${HOME}/distributed-continual-learning/xps/polaris/experiments_polaris.yaml --config er_ptychonn_scale --log-level info
+mpiexec -n ${NTOTRANKS} --ppn ${NRANKS_PER_NODE} --cpu-bind none ${HOME}/distributed-continual-learning/xps/polaris/set_affinity_gpu_polaris.sh python ${HOME}/distributed-continual-learning/main.py --yaml-config ${HOME}/distributed-continual-learning/xps/polaris/experiments_polaris.yaml --config er_ptychonn_scale --log-level info

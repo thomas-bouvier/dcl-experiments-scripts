@@ -1,4 +1,4 @@
-#!/bin/bash -l -l
+#!/bin/bash -l
 
 # Check if PMI_LOCAL_RANK is set
 if [[ -z "${PMI_LOCAL_RANK}" ]]; then
