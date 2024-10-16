@@ -1,8 +1,8 @@
 #!/bin/bash -l
 #PBS -A VeloC
 #PBS -l select=1
-#PBS -l walltime=1:40:00
-#PBS -q preemptable
+#PBS -l walltime=1:00:00
+#PBS -q debug
 #PBS -l filesystems=home
 #PBS -M contact@thomas-bouvier.io
 
@@ -28,11 +28,11 @@ NTOTRANKS=$(( NNODES * NRANKS_PER_NODE ))
 echo "NUM_OF_NODES=${NNODES} TOTAL_NUM_RANKS=${NTOTRANKS} RANKS_PER_NODE=${NRANKS_PER_NODE} THREADS_PER_RANK=${NTHREADS}"
 
 # Copying the dataset to local storage
-#mpiexec -n ${NNODES} -hostfile $PBS_NODEFILE cp -r /grand/VeloC/tbouvier/datasets/Ptycho /local/scratch/
+#mpiexec -n ${NNODES} -hostfile $PBS_NODEFILE cp -r /grand/VeloC/tbouvier/datasets/ImageNet_blurred /local/scratch/
 
 # IMPORANT NOTE: the --cpu-bind none option to mpiexec is crucial if you
 # intend to run Mochi processes that will use additional threads or
 # execution streams.  The default CPU binding on Polaris will limit each
 # process launched with mpiexec to a single CPU core that will starve any
 # additional threads.
-mpiexec -n ${NTOTRANKS} --ppn ${NRANKS_PER_NODE} --cpu-bind none ./set_affinity_gpu_polaris.sh python ${HOME}/distributed-continual-learning/main.py --yaml-config ${HOME}/distributed-continual-learning/xps/polaris/experiments_polaris.yaml --config derpp_ptychonn_scale --log-level info
+mpiexec -n ${NTOTRANKS} --ppn ${NRANKS_PER_NODE} --cpu-bind none python ${HOME}/distributed-continual-learning/main.py --yaml-config ../${HOME}/distributed-continual-learning/xps/polaris/experiments_polaris.yaml --config derpp_resnet_scale --log-level info

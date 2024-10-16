@@ -10,8 +10,10 @@ set -eu
 
 echo "Setting up spack"
 source ${HOME}/git/spack-polaris/share/spack/setup-env.sh
+module swap PrgEnv-nvhpc PrgEnv-gnu
+module load nvhpc-mixed
 echo "Activating env"
-spack env activate /home/tbouvier/git/spack-envs/polaris
+spack env activate ${HOME}/git/spack-envs/polaris
 spack find -fN
 
 export WANDB_MODE=offline
@@ -28,11 +30,9 @@ echo "NUM_OF_NODES=${NNODES} TOTAL_NUM_RANKS=${NTOTRANKS} RANKS_PER_NODE=${NRANK
 # Copying the dataset to local storage
 #mpiexec -n ${NNODES} -hostfile $PBS_NODEFILE cp -r /grand/VeloC/tbouvier/datasets/ImageNet_blurred /local/scratch/
 
-# Jobs are run from the xps/polaris dir, main.py is at location ../..
-#
-# IMPORANT NOTE: the --cpu-bind depth option to mpiexec is crucial if you
+# IMPORANT NOTE: the --cpu-bind none option to mpiexec is crucial if you
 # intend to run Mochi processes that will use additional threads or
 # execution streams.  The default CPU binding on Polaris will limit each
 # process launched with mpiexec to a single CPU core that will starve any
 # additional threads.
-mpiexec -n ${NTOTRANKS} --ppn ${NRANKS_PER_NODE} --depth=${NDEPTH} --cpu-bind depth ./set_affinity_gpu_polaris.sh python ../../main.py --yaml-config experiments_polaris.yaml --config baseline_naive_ghostnet_scale --log-level info
+mpiexec -n ${NTOTRANKS} --ppn ${NRANKS_PER_NODE} --cpu-bind none ./set_affinity_gpu_polaris.sh python ${HOME}/distributed-continual-learning/main.py --yaml-config ${HOME}/distributed-continual-learning/xps/polaris/experiments_polaris.yaml --config baseline_naive_ghostnet_scale --log-level info
