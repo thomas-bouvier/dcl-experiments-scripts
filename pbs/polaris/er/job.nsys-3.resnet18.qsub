@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash -l
 #PBS -A VeloC
 #PBS -l select=16
 #PBS -l walltime=0:10:00
